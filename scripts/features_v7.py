@@ -146,6 +146,20 @@ def attach_historical(races, context):
         sliced=dict(context,through=through,records=records,people=people(context['people']),ids={},
             base=dict(context['base'],through=through,horses=horses,people=people(context['base']['people']),clocks={}))
         cards=[r for r in races if r['date']==date]
+        # Older cached cards predate age/sex collection. Recover identity only
+        # from a unique cohort with genuine starts BEFORE this race date.
+        # Never infer identity from this race's finishers or later appearances.
+        for r in cards:
+            for h in r['horses']:
+                if h.get('age') and h.get('sex'):continue
+                prefix=r['venue']+'|'+str(h['name']).strip()+'|'
+                matches=[k.split('|') for k,rows in records.items() if rows and k.startswith(prefix) and len(k.split('|'))==4]
+                matches=[k for k in matches if k[2].isdigit() and k[3] in ('암','수','거')
+                    and (not h.get('sex') or h['sex']==k[3])
+                    and (not h.get('age') or int(date[:4])-int(k[2])==int(h['age']))]
+                if len(matches)==1:
+                    h['age']=int(date[:4])-int(matches[0][2]);h['sex']=matches[0][3]
+                    h['identity_recovery']='unique_prior_history'
         attach(cards,sliced)
         for r in cards:
             r['prediction_view']='historical_recalculation'

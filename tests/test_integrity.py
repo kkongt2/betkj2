@@ -28,6 +28,11 @@ class Integrity(unittest.TestCase):
         self.assertEqual([h['features_v7'] for h in card['horses']],expected)
         self.assertEqual(card['history_through_v7'],'20260909')
         self.assertEqual(context,before)
+        old_card=race('20260910')
+        for h in old_card['horses']:h.pop('age');h.pop('sex')
+        attach_historical([old_card],context)
+        self.assertEqual([h['features_v7'] for h in old_card['horses']],expected)
+        self.assertTrue(all(h['quality_v7']['history']>0 for h in old_card['horses']))
         for rows in context['records'].values():
             for row in rows:
                 if row['day']>=__import__('datetime').datetime.strptime('20260910','%Y%m%d').toordinal():row['placed']=False;row['rating']=9999

@@ -10,7 +10,9 @@ setImmediate(()=>{
   get('venues').children.find(b=>b.textContent==='제주').click();
   const dates=vm.runInContext("[...new Set(state.doc.races.filter(r=>r.venue==='jeju').map(r=>r.date))].sort()",context);
   assert.equal(get('dates').children.length,dates.length);
-  get('dates').children[0].click();assert.match(get('race-content').innerHTML,/복연승 실제 결과/);assert.match(get('race-content').innerHTML,/1\.5배/);assert.doesNotMatch(get('race-content').innerHTML,/추정 적중확률/);
+  get('dates').children[0].click();assert.match(get('race-content').innerHTML,/복연승 실제 결과/);assert.match(get('race-content').innerHTML,/1\.5배/);assert.match(get('race-content').innerHTML,/추정 적중확률/);assert.match(get('race-content').innerHTML,/손익분기 배당/);assert.match(get('race-content').innerHTML,/과거 데이터 재계산/);
+  vm.runInContext("state.venue='seoul';state.date='20260912';state.round=1;state.doc.races.find(r=>r.venue==='seoul'&&r.race_no===1).start_time='00:01';selectors()",context);
+  assert.match(get('race-content').innerHTML,/출발 시각 경과/);assert.match(get('race-content').innerHTML,/공식 복연승 결과가 아직/);assert.match(get('race-content').innerHTML,/손익분기 배당/);
   assert.match(get('metrics').innerHTML,/26,100원/);assert.match(get('validation').innerHTML,/최고 수익일/);
   console.log('PASS one-click round, region-specific dates, all combination break-even dividends, official past outcomes, abstention and profit metrics');
 });

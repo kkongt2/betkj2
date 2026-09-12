@@ -2,7 +2,7 @@ import copy,sys,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from collect_payouts import payouts
-from features_v7 import History
+from features_v7 import History,attach_historical
 
 class Integrity(unittest.TestCase):
     def test_sales_not_dividends(self):
@@ -17,5 +17,21 @@ class Integrity(unittest.TestCase):
         for h in after['horses']:h.update(finish=5-h['finish'],race_seconds=99,early_position=4)
         self.assertEqual(x,history.field(after)[1])
         history.add_day([r]);self.assertEqual(x,history.field(r)[1])
+
+    def test_historical_slice_excludes_same_day_and_future(self):
+        def race(date):
+            return dict(date=date,venue='seoul',race_no=1,distance=1200,grade='국6등급',place_k=2,place_winners=[1,2],horses=[dict(number=i,name=f'h{i}',age=3,sex='수',rating=i*10,burden=54,jockey='j',trainer='t',finish=i,race_seconds=70+i,early_position=i) for i in range(1,5)])
+        history=History();history.add_day([race('20260909')]);card=race('20260910')
+        expected=history.field(card)[1]
+        history.add_day([race('20260910')]);history.add_day([race('20260911')])
+        context=history.export();before=copy.deepcopy(context);attach_historical([card],context)
+        self.assertEqual([h['features_v7'] for h in card['horses']],expected)
+        self.assertEqual(card['history_through_v7'],'20260909')
+        self.assertEqual(context,before)
+        for rows in context['records'].values():
+            for row in rows:
+                if row['day']>=__import__('datetime').datetime.strptime('20260910','%Y%m%d').toordinal():row['placed']=False;row['rating']=9999
+        attach_historical([card],context)
+        self.assertEqual([h['features_v7'] for h in card['horses']],expected)
 
 if __name__=='__main__':unittest.main()

@@ -6,7 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from collect import catalog,get,VENUES
 from collect_v7 import parse_report
-from features_v7 import History,attach
+from features_v7 import History,attach,attach_historical
 
 def refresh_and_attach(races):
     path=Path('data/history-context-v7.json.gz')
@@ -38,5 +38,6 @@ def refresh_and_attach(races):
             context=store.export();status['through']=store.through
     except Exception as exc:status.update(status='refresh_failed',error=str(exc))
     attach(races,context)
+    attach_historical(races,context)
     path.write_bytes(gzip.compress(json.dumps(context,ensure_ascii=False,separators=(',',':')).encode(),mtime=0))
     return status

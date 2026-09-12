@@ -48,18 +48,20 @@ function renderRace(r){
   let html=`<div class="race-heading"><div><h3>${esc(venues[r.venue])} ${r.race_no}경주</h3><p>${esc(r.grade||'')} · ${r.distance}m · ${r.horses.length}두 · ${esc(r.start_time||'시각 미확인')}</p></div><span class="pill">${ended?'출발 시각 경과':'예정 경주'}</span></div>`;
   if(ended){
     const result=r.official_result,pp=result?.pair;
-    html+=`<div class="notice">지난 경주는 공식 결과만 표시합니다.</div>`;
+    html+=`<div class="notice">지난 경주의 예측은 경주일 이전 이력으로 재계산한 연구 후보입니다. 실제 사전예측 기록이 아니며, 확정 결과·배당은 예측 계산에 사용하지 않습니다.</div>`;
     if(pp?.status==='confirmed'&&Array.isArray(pp.payouts))html+=`<div class="panel"><h2>복연승 실제 결과</h2><table><thead><tr><th>적중 조합</th><th>확정 배당</th></tr></thead><tbody>${pp.payouts.map(p=>`<tr><td>${p.numbers.map(esc).join(' — ')}</td><td>${Number(p.odds).toFixed(1)}배</td></tr>`).join('')}</tbody></table></div>`;
     else html+=`<div class="empty">${pp?.status==='refund'?'복연승 환불 경주입니다.':'공식 복연승 결과가 아직 확인되지 않았습니다.'}</div>`;
   }else{
     const cs=QPL.predict(r,state.model),chosen=QPL.selection(cs,state.model),keys=new Set(chosen.map(key));
     const recommend=state.model.approved&&fresh&&Number.isFinite(start);
     html+=`<div class="notice">${!fresh?'데이터가 오래되었습니다. 갱신 후 판단해 주세요. ':''}${recommend?(chosen.length?'검증 기준을 통과한 조건의 조합입니다.':'현재 연구 조건을 충족하는 조합이 없습니다.'):state.model.approved?'경주 시각·데이터 상태 확인이 필요해 추천을 보류합니다.':'장기 흑자 검증이 부족해 베팅 추천을 보류합니다. 연구 후보를 기대수익 순으로 표시합니다.'} 예상 배당은 실제 시세와 다를 수 있습니다.</div>`;
-    if(cs.length){
-      html+=`<div class="candidate-grid">${cs.slice(0,2).map((c,i)=>candidate(c,i,keys.has(key(c)))).join('')}</div>`;
-      if(cs.length>2)html+=`<details class="list-more"><summary>나머지 ${cs.length-2}개 조합 보기</summary>${cs.slice(2).map((c,i)=>candidate(c,i+2,keys.has(key(c)))).join('')}</details>`;
-    }else html+='<div class="empty">경주 이력이 부족하거나 오래되어 추정치를 표시할 수 없습니다.</div>';
   }
+  const cs=QPL.predict(r,state.model),keys=new Set(QPL.selection(cs,state.model).map(key));
+  if(ended)html+='<h3>예측 조합 · 과거 데이터 재계산</h3>';
+  if(cs.length){
+    html+=`<div class="candidate-grid">${cs.slice(0,2).map((c,i)=>candidate(c,i,keys.has(key(c)))).join('')}</div>`;
+    if(cs.length>2)html+=`<details class="list-more"><summary>나머지 ${cs.length-2}개 조합 보기</summary>${cs.slice(2).map((c,i)=>candidate(c,i+2,keys.has(key(c)))).join('')}</details>`;
+  }else html+='<div class="empty">경주 이력이 부족하거나 오래되어 추정치를 표시할 수 없습니다.</div>';
   $('race-content').innerHTML=html;
 }
 async function json(path){const r=await fetch(`${path}?t=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw Error(`${path} 불러오기 실패`);return r.json();}

@@ -127,3 +127,26 @@ def attach(races,context):
             if h.get('horse_id'):store.ids.setdefault(store.key(r,h),str(h['horse_id']))
         r['feature_version_v7']=VERSION;r['history_through_v7']=context['through']
     context['ids']=store.ids
+
+
+def attach_historical(races, context):
+    """Recalculate past cards from a strict earlier-date slice of retained history.
+
+    These are retrospective estimates, not archived pre-race predictions.
+    Rolling retention may omit the oldest observations available on race day.
+    """
+    for date in sorted({r['date'] for r in races if r['date'] <= context['through']}):
+        day=ordinal(date)
+        records={k:[x for x in rows if x['day'] < day] for k,rows in context['records'].items()}
+        horses={k:[x for x in rows if x['day'] < day] for k,rows in context['base']['horses'].items()}
+        latest=max((x['day'] for rows in horses.values() for x in rows),default=0)
+        if not latest:continue
+        through=datetime.fromordinal(latest).strftime('%Y%m%d')
+        def people(values):return {k:[x for x in rows if x[0] < day] for k,rows in values.items()}
+        sliced=dict(context,through=through,records=records,people=people(context['people']),ids={},
+            base=dict(context['base'],through=through,horses=horses,people=people(context['base']['people']),clocks={}))
+        cards=[r for r in races if r['date']==date]
+        attach(cards,sliced)
+        for r in cards:
+            r['prediction_view']='historical_recalculation'
+            r['history_source_through_v7']=context['through']

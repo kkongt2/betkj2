@@ -34,11 +34,11 @@ jobs:
         run: python scripts/update_kra.py
       - name: Validate published assets
         run: |
+          python scripts/recalculate_past.py
           node tests/model.cjs
           node tests/ui.cjs
           python -m unittest discover -s tests -p 'test_*.py'
       - name: Preserve latest public input data
-        if: github.event_name != 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

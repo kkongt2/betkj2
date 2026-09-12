@@ -86,3 +86,7 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python scripts/train_profit.py
 - 현재 모델은 2024년까지 학습한 고정 모델입니다. 사전 이력 입력은 갱신하지만 새 결과로 자동 재학습하지 않습니다.
 
 학습·조건·평가 근거는 `data/experiment.json`, `data/frozen-policy.json`, `data/backtest.json`에 남아 있습니다.
+
+## 경주 조회 범위
+
+한국시간 기준 이번 주와 지난 두 주(지지난주 월요일 이후)의 실제 경주일을 표시합니다. 지난 경주는 공식 보관 자료와 결과를 사용하고, 예측은 현재 보관된 이력에서 해당 경주일 이전 자료만 골라 재계산합니다. 최신 경주 수집 때도 이 범위의 기존 경주를 유지합니다.

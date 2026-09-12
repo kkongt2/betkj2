@@ -34,7 +34,7 @@ jobs:
         run: python scripts/update_kra.py
       - name: Validate published assets
         run: |
-          python scripts/recalculate_past.py
+          python scripts/recalculate_past.py --fetch-missing
           node tests/model.cjs
           node tests/ui.cjs
           python -m unittest discover -s tests -p 'test_*.py'

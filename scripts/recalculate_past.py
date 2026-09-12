@@ -1,10 +1,12 @@
 """Enrich existing past cards without collecting or storing prediction records."""
-import gzip,json
+import gzip,json,sys
 from pathlib import Path
 from features_v7 import attach_historical
+from archive_cards import extend
 
 def run():
     path=Path('data/latest.json');doc=json.loads(path.read_text())
+    extend(doc,fetch_missing='--fetch-missing' in sys.argv)
     context=json.loads(gzip.decompress(Path('data/history-context-v7.json.gz').read_bytes()))
     attach_historical(doc['races'],context)
     path.write_text(json.dumps(doc,ensure_ascii=False,indent=2))

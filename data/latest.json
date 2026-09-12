@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T10:25:36+09:00",
+  "updated_at": "2026-09-12T15:31:11+09:00",
   "races": [
     {
       "date": "20260828",
@@ -79887,6 +79887,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -79943,12 +79947,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=1",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -80594,6 +80594,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -80650,12 +80654,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=2",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -81301,6 +81301,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -81357,12 +81361,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=3",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -82102,6 +82102,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -82165,12 +82169,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=4",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -83004,6 +83004,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -83068,12 +83072,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=5",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -83995,6 +83995,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -84060,12 +84064,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=6",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -84714,6 +84714,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -84770,12 +84774,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=7",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -85427,6 +85427,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260906",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -85483,12 +85487,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=8",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260906",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -86109,6 +86109,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -86165,12 +86169,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=1",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -87126,6 +87126,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -87192,12 +87196,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=2",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -88189,6 +88189,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -88255,12 +88259,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=3",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -89264,6 +89264,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -89330,12 +89334,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=4",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -90340,6 +90340,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -90406,12 +90410,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=5",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -91227,6 +91227,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -91291,12 +91295,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=6",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -92305,6 +92305,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -92370,12 +92374,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=7",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -93385,6 +93385,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -93450,12 +93454,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=8",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "busan",
@@ -94462,6 +94462,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -94528,12 +94532,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20260911&realRcNo=9",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -95173,6 +95173,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -95229,12 +95233,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=1",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -95974,6 +95974,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -96037,12 +96041,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=2",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -96785,6 +96785,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -96848,12 +96852,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=3",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -97492,6 +97492,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -97548,12 +97552,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=4",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -98205,6 +98205,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -98261,12 +98265,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=5",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -99185,6 +99185,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -99249,12 +99253,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=6",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -100085,6 +100085,10 @@
       ],
       "source": "KRA public race page",
       "historical_view": true,
+      "feature_version_v7": "7.0-race-pace",
+      "history_through_v7": "20260910",
+      "prediction_view": "historical_recalculation",
+      "history_source_through_v7": "20260911",
       "official_result": {
         "status": "confirmed",
         "starters": [
@@ -100149,12 +100153,8 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260911&realRcNo=7",
-        "checked_at": "2026-09-12T09:12:07+09:00"
-      },
-      "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260910",
-      "prediction_view": "historical_recalculation",
-      "history_source_through_v7": "20260911"
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -100966,7 +100966,65 @@
         "sand_cm": 5.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                7
+              ],
+              "odds": 3.2
+            },
+            {
+              "numbers": [
+                5
+              ],
+              "odds": 4.9
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                5,
+                7
+              ],
+              "odds": 10.8
+            },
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "odds": 1.8
+            },
+            {
+              "numbers": [
+                3,
+                5
+              ],
+              "odds": 3.1
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=1",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -101003,8 +101061,8 @@
             2
           ],
           "horse_id": "3109183",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 296.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 294.0,
           "average_weight": 294.0,
           "jockey_stats_1y": {
@@ -101116,8 +101174,8 @@
             8
           ],
           "horse_id": "3102610",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 252.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 251.0,
           "average_weight": 263.0,
           "jockey_stats_1y": {
@@ -101229,8 +101287,8 @@
             5
           ],
           "horse_id": "3104108",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 288.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 291.0,
           "average_weight": 293.0,
           "jockey_stats_1y": {
@@ -101342,8 +101400,8 @@
             3
           ],
           "horse_id": "3107556",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 284.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 284.0,
           "average_weight": 287.0,
           "jockey_stats_1y": {
@@ -101455,8 +101513,8 @@
             5
           ],
           "horse_id": "3019033",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 277.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 278.0,
           "average_weight": 277.0,
           "jockey_stats_1y": {
@@ -101568,8 +101626,8 @@
             7
           ],
           "horse_id": "3104580",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 256.0,
+          "horse_weight_change": -6.0,
           "previous_weight": 262.0,
           "average_weight": 263.0,
           "jockey_stats_1y": {
@@ -101681,8 +101739,8 @@
             10
           ],
           "horse_id": "3103652",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 304.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 302.0,
           "average_weight": 320.0,
           "jockey_stats_1y": {
@@ -101776,7 +101834,65 @@
         "sand_cm": 5.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                1
+              ],
+              "odds": 1.6
+            },
+            {
+              "numbers": [
+                2
+              ],
+              "odds": 4.7
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                1,
+                2
+              ],
+              "odds": 4.3
+            },
+            {
+              "numbers": [
+                1,
+                4
+              ],
+              "odds": 1.6
+            },
+            {
+              "numbers": [
+                2,
+                4
+              ],
+              "odds": 3.4
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=2",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -101816,8 +101932,8 @@
             5
           ],
           "horse_id": "3104084",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 270.0,
+          "horse_weight_change": 10.0,
           "previous_weight": 260.0,
           "average_weight": 275.0,
           "jockey_stats_1y": {
@@ -101929,8 +102045,8 @@
             5
           ],
           "horse_id": "3103626",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 283.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 280.0,
           "average_weight": 279.0,
           "jockey_stats_1y": {
@@ -102042,8 +102158,8 @@
             8
           ],
           "horse_id": "3105484",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 228.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 222.0,
           "average_weight": 232.0,
           "jockey_stats_1y": {
@@ -102155,8 +102271,8 @@
             4
           ],
           "horse_id": "3103807",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 260.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 264.0,
           "average_weight": 264.0,
           "jockey_stats_1y": {
@@ -102268,8 +102384,8 @@
             3
           ],
           "horse_id": "3107913",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 245.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 250.0,
           "average_weight": 253.0,
           "jockey_stats_1y": {
@@ -102381,8 +102497,8 @@
             7
           ],
           "horse_id": "3103437",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 251.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 252.0,
           "average_weight": 256.0,
           "jockey_stats_1y": {
@@ -102494,8 +102610,8 @@
             4
           ],
           "horse_id": "3104139",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 303.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 303.0,
           "average_weight": 302.0,
           "jockey_stats_1y": {
@@ -102589,7 +102705,65 @@
         "sand_cm": 5.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                3
+              ],
+              "odds": 1.4
+            },
+            {
+              "numbers": [
+                7
+              ],
+              "odds": 2.1
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "odds": 1.8
+            },
+            {
+              "numbers": [
+                3,
+                4
+              ],
+              "odds": 2.3
+            },
+            {
+              "numbers": [
+                4,
+                7
+              ],
+              "odds": 3.4
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=3",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -102597,9 +102771,9 @@
       "date": "20260912",
       "race_no": 4,
       "distance": 1110,
-      "start_time": "14:00",
+      "start_time": "14:03",
       "grade": "제4등급",
-      "title": "제4등급 · 1110M · 14:00",
+      "title": "제4등급 · 1110M · 14:03",
       "horses": [
         {
           "number": 1,
@@ -102629,8 +102803,8 @@
             5
           ],
           "horse_id": "3102939",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 281.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 286.0,
           "average_weight": 289.0,
           "jockey_stats_1y": {
@@ -102742,8 +102916,8 @@
             2
           ],
           "horse_id": "3104157",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 263.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 266.0,
           "average_weight": 262.0,
           "jockey_stats_1y": {
@@ -102855,8 +103029,8 @@
             7
           ],
           "horse_id": "3018038",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 256.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 258.0,
           "average_weight": 263.0,
           "jockey_stats_1y": {
@@ -102968,8 +103142,8 @@
             1
           ],
           "horse_id": "3104732",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 288.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 284.0,
           "average_weight": 286.0,
           "jockey_stats_1y": {
@@ -103081,8 +103255,8 @@
             3
           ],
           "horse_id": "3018460",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 262.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 263.0,
           "average_weight": 263.0,
           "jockey_stats_1y": {
@@ -103194,8 +103368,8 @@
             8
           ],
           "horse_id": "3103717",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 277.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 276.0,
           "average_weight": 279.0,
           "jockey_stats_1y": {
@@ -103307,8 +103481,8 @@
             1
           ],
           "horse_id": "3107571",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 278.0,
+          "horse_weight_change": 8.0,
           "previous_weight": 270.0,
           "average_weight": 272.0,
           "jockey_stats_1y": {
@@ -103402,7 +103576,65 @@
         "sand_cm": 5.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                3
+              ],
+              "odds": 3.0
+            },
+            {
+              "numbers": [
+                1
+              ],
+              "odds": 2.1
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                1,
+                3
+              ],
+              "odds": 3.5
+            },
+            {
+              "numbers": [
+                3,
+                6
+              ],
+              "odds": 11.0
+            },
+            {
+              "numbers": [
+                1,
+                6
+              ],
+              "odds": 8.9
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=4",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -103442,8 +103674,8 @@
             2
           ],
           "horse_id": "3104156",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 274.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 275.0,
           "average_weight": 266.0,
           "jockey_stats_1y": {
@@ -103555,8 +103787,8 @@
             3
           ],
           "horse_id": "3102094",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 273.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 272.0,
           "average_weight": 284.0,
           "jockey_stats_1y": {
@@ -103668,8 +103900,8 @@
             3
           ],
           "horse_id": "3107541",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 276.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 274.0,
           "average_weight": 278.0,
           "jockey_stats_1y": {
@@ -103781,8 +104013,8 @@
             8
           ],
           "horse_id": "3018716",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 267.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 265.0,
           "average_weight": 274.0,
           "jockey_stats_1y": {
@@ -103894,8 +104126,8 @@
             6
           ],
           "horse_id": "3104287",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 268.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 262.0,
           "average_weight": 276.0,
           "jockey_stats_1y": {
@@ -104007,8 +104239,8 @@
             10
           ],
           "horse_id": "3103803",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 285.0,
+          "horse_weight_change": 8.0,
           "previous_weight": 277.0,
           "average_weight": 283.0,
           "jockey_stats_1y": {
@@ -104120,8 +104352,8 @@
             7
           ],
           "horse_id": "3103781",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 262.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 269.0,
           "average_weight": 280.0,
           "jockey_stats_1y": {
@@ -104215,7 +104447,65 @@
         "sand_cm": 5.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                7
+              ],
+              "odds": 2.5
+            },
+            {
+              "numbers": [
+                3
+              ],
+              "odds": 1.6
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "odds": 2.5
+            },
+            {
+              "numbers": [
+                5,
+                7
+              ],
+              "odds": 3.2
+            },
+            {
+              "numbers": [
+                3,
+                5
+              ],
+              "odds": 2.0
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=5",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -104255,8 +104545,8 @@
             4
           ],
           "horse_id": "3104674",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 262.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 262.0,
           "average_weight": 257.0,
           "jockey_stats_1y": {
@@ -104368,8 +104658,8 @@
             10
           ],
           "horse_id": "3104611",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 276.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 274.0,
           "average_weight": 286.0,
           "jockey_stats_1y": {
@@ -104481,8 +104771,8 @@
             7
           ],
           "horse_id": "3104223",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 264.0,
+          "horse_weight_change": -6.0,
           "previous_weight": 270.0,
           "average_weight": 257.0,
           "jockey_stats_1y": {
@@ -104594,8 +104884,8 @@
             2
           ],
           "horse_id": "3016266",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 287.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 287.0,
           "average_weight": 299.0,
           "jockey_stats_1y": {
@@ -104707,8 +104997,8 @@
             7
           ],
           "horse_id": "3016573",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 271.0,
+          "horse_weight_change": 9.0,
           "previous_weight": 262.0,
           "average_weight": 252.0,
           "jockey_stats_1y": {
@@ -104820,8 +105110,8 @@
             2
           ],
           "horse_id": "3107553",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 285.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 289.0,
           "average_weight": 287.0,
           "jockey_stats_1y": {
@@ -104933,8 +105223,8 @@
             8
           ],
           "horse_id": "3103255",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 276.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 276.0,
           "average_weight": 277.0,
           "jockey_stats_1y": {
@@ -105068,8 +105358,8 @@
             2
           ],
           "horse_id": "3018812",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 339.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 338.0,
           "average_weight": 334.0,
           "jockey_stats_1y": {
@@ -105181,8 +105471,8 @@
             6
           ],
           "horse_id": "3104766",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 279.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 276.0,
           "average_weight": 276.0,
           "jockey_stats_1y": {
@@ -105294,8 +105584,8 @@
             7
           ],
           "horse_id": "3104646",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 298.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 294.0,
           "average_weight": 296.0,
           "jockey_stats_1y": {
@@ -105407,8 +105697,8 @@
             5
           ],
           "horse_id": "3104581",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 313.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 314.0,
           "average_weight": 313.0,
           "jockey_stats_1y": {
@@ -105520,8 +105810,8 @@
             2
           ],
           "horse_id": "3104292",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 299.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 293.0,
           "average_weight": 294.0,
           "jockey_stats_1y": {
@@ -105633,8 +105923,8 @@
             1
           ],
           "horse_id": "3103452",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 279.0,
+          "horse_weight_change": -13.0,
           "previous_weight": 292.0,
           "average_weight": 292.0,
           "jockey_stats_1y": {
@@ -105746,8 +106036,8 @@
             7
           ],
           "horse_id": "3018614",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 288.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 282.0,
           "average_weight": 287.0,
           "jockey_stats_1y": {
@@ -106946,7 +107236,74 @@
         "sand_cm": 8.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                3
+              ],
+              "odds": 1.1
+            },
+            {
+              "numbers": [
+                7
+              ],
+              "odds": 1.1
+            },
+            {
+              "numbers": [
+                1
+              ],
+              "odds": 2.7
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "odds": 1.3
+            },
+            {
+              "numbers": [
+                1,
+                3
+              ],
+              "odds": 4.9
+            },
+            {
+              "numbers": [
+                1,
+                7
+              ],
+              "odds": 3.7
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=1",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "seoul",
@@ -106985,8 +107342,8 @@
             4
           ],
           "horse_id": "0055287",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 472.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 467.0,
           "average_weight": 467.0,
           "jockey_stats_1y": {
@@ -107094,8 +107451,8 @@
             4
           ],
           "horse_id": "0055355",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 471.0,
+          "horse_weight_change": 3.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -107205,8 +107562,8 @@
             10
           ],
           "horse_id": "0055383",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 431.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 426.0,
           "average_weight": 426.0,
           "jockey_stats_1y": {
@@ -107314,8 +107671,8 @@
             4
           ],
           "horse_id": "0055797",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 496.0,
+          "horse_weight_change": -1.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -107423,8 +107780,8 @@
             6
           ],
           "horse_id": "0055474",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 473.0,
+          "horse_weight_change": 12.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -107533,8 +107890,8 @@
             8
           ],
           "horse_id": "0056227",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 525.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 532.0,
           "average_weight": 532.0,
           "jockey_stats_1y": {
@@ -107645,8 +108002,8 @@
             8
           ],
           "horse_id": "0055785",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 443.0,
+          "horse_weight_change": 20.0,
           "previous_weight": 423.0,
           "average_weight": 423.0,
           "jockey_stats_1y": null,
@@ -107748,8 +108105,8 @@
             5
           ],
           "horse_id": "0055348",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 449.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 445.0,
           "average_weight": 443.0,
           "jockey_stats_1y": {
@@ -107857,8 +108214,8 @@
             7
           ],
           "horse_id": "0055190",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 465.0,
+          "horse_weight_change": 0.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -107967,8 +108324,8 @@
             5
           ],
           "horse_id": "0056213",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 478.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 472.0,
           "average_weight": 472.0,
           "jockey_stats_1y": null,
@@ -108054,7 +108411,74 @@
         "sand_cm": 8.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                6
+              ],
+              "odds": 7.8
+            },
+            {
+              "numbers": [
+                10
+              ],
+              "odds": 1.3
+            },
+            {
+              "numbers": [
+                2
+              ],
+              "odds": 3.7
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                6,
+                10
+              ],
+              "odds": 13.7
+            },
+            {
+              "numbers": [
+                2,
+                6
+              ],
+              "odds": 53.3
+            },
+            {
+              "numbers": [
+                2,
+                10
+              ],
+              "odds": 8.6
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=2",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "seoul",
@@ -108094,8 +108518,8 @@
             5
           ],
           "horse_id": "0053576",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 439.0,
+          "horse_weight_change": -10.0,
           "previous_weight": 449.0,
           "average_weight": 437.0,
           "jockey_stats_1y": {
@@ -108207,8 +108631,8 @@
             6
           ],
           "horse_id": "0053521",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 455.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 458.0,
           "average_weight": 451.0,
           "jockey_stats_1y": {
@@ -108320,8 +108744,8 @@
             5
           ],
           "horse_id": "0051309",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 488.0,
+          "horse_weight_change": 15.0,
           "previous_weight": 473.0,
           "average_weight": 473.0,
           "jockey_stats_1y": {
@@ -108433,8 +108857,8 @@
             9
           ],
           "horse_id": "0053195",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 463.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 461.0,
           "average_weight": 470.0,
           "jockey_stats_1y": {
@@ -108546,8 +108970,8 @@
             7
           ],
           "horse_id": "0053580",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 484.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 484.0,
           "average_weight": 480.0,
           "jockey_stats_1y": {
@@ -108659,8 +109083,8 @@
             6
           ],
           "horse_id": "0053235",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 461.0,
+          "horse_weight_change": 15.0,
           "previous_weight": 446.0,
           "average_weight": 459.0,
           "jockey_stats_1y": null,
@@ -108764,8 +109188,8 @@
             9
           ],
           "horse_id": "0052891",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 427.0,
+          "horse_weight_change": 9.0,
           "previous_weight": 418.0,
           "average_weight": 417.0,
           "jockey_stats_1y": {
@@ -108877,8 +109301,8 @@
             7
           ],
           "horse_id": "0052010",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 489.0,
+          "horse_weight_change": 18.0,
           "previous_weight": 471.0,
           "average_weight": 471.0,
           "jockey_stats_1y": {
@@ -108990,8 +109414,8 @@
             9
           ],
           "horse_id": "0053386",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 433.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 428.0,
           "average_weight": 434.0,
           "jockey_stats_1y": null,
@@ -109095,8 +109519,8 @@
             4
           ],
           "horse_id": "0057180",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 436.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 441.0,
           "average_weight": 455.0,
           "jockey_stats_1y": {
@@ -109208,8 +109632,8 @@
             11
           ],
           "horse_id": "0052257",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 491.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 487.0,
           "average_weight": 479.0,
           "jockey_stats_1y": {
@@ -109303,7 +109727,75 @@
         "sand_cm": 8.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                6
+              ],
+              "odds": 2.2
+            },
+            {
+              "numbers": [
+                4
+              ],
+              "odds": 1.3
+            },
+            {
+              "numbers": [
+                10
+              ],
+              "odds": 3.0
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                4,
+                6
+              ],
+              "odds": 3.2
+            },
+            {
+              "numbers": [
+                6,
+                10
+              ],
+              "odds": 10.6
+            },
+            {
+              "numbers": [
+                4,
+                10
+              ],
+              "odds": 5.9
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=3",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "seoul",
@@ -109311,9 +109803,9 @@
       "date": "20260912",
       "race_no": 4,
       "distance": 1300,
-      "start_time": "13:35",
+      "start_time": "13:40",
       "grade": "국6등급",
-      "title": "국6등급 · 1300M · 13:35",
+      "title": "국6등급 · 1300M · 13:40",
       "horses": [
         {
           "number": 1,
@@ -109456,8 +109948,8 @@
             8
           ],
           "horse_id": "0054099",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 507.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 509.0,
           "average_weight": 502.0,
           "jockey_stats_1y": {
@@ -109569,8 +110061,8 @@
             5
           ],
           "horse_id": "0056256",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 490.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 490.0,
           "average_weight": 482.0,
           "jockey_stats_1y": {
@@ -109682,8 +110174,8 @@
             7
           ],
           "horse_id": "0052833",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 460.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 463.0,
           "average_weight": 464.0,
           "jockey_stats_1y": {
@@ -109795,8 +110287,8 @@
             3
           ],
           "horse_id": "0054137",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 501.0,
+          "horse_weight_change": 11.0,
           "previous_weight": 490.0,
           "average_weight": 484.0,
           "jockey_stats_1y": null,
@@ -109898,8 +110390,8 @@
             6
           ],
           "horse_id": "0053910",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 448.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 446.0,
           "average_weight": 445.0,
           "jockey_stats_1y": {
@@ -110011,8 +110503,8 @@
             8
           ],
           "horse_id": "0051642",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 469.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 466.0,
           "average_weight": 479.0,
           "jockey_stats_1y": null,
@@ -110116,8 +110608,8 @@
             8
           ],
           "horse_id": "0061442",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 422.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 420.0,
           "average_weight": 427.0,
           "jockey_stats_1y": {
@@ -110214,7 +110706,7 @@
           "training_count": 11,
           "interval_weeks": 10,
           "gear": "계란형큰,망사눈",
-          "note": "",
+          "note": "말취소",
           "starts_1y": 2,
           "wins_1y": 0,
           "seconds_1y": 0,
@@ -110228,8 +110720,8 @@
             4
           ],
           "horse_id": "0054177",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 474.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 474.0,
           "average_weight": 465.0,
           "jockey_stats_1y": null,
@@ -110333,8 +110825,8 @@
             3
           ],
           "horse_id": "0053658",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 447.0,
+          "horse_weight_change": 14.0,
           "previous_weight": 433.0,
           "average_weight": 433.0,
           "jockey_stats_1y": {
@@ -110446,8 +110938,8 @@
             6
           ],
           "horse_id": "0053412",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 436.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 437.0,
           "average_weight": 437.0,
           "jockey_stats_1y": {
@@ -110541,7 +111033,73 @@
         "sand_cm": 8.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                10
+              ],
+              "odds": 2.0
+            },
+            {
+              "numbers": [
+                11
+              ],
+              "odds": 2.1
+            },
+            {
+              "numbers": [
+                4
+              ],
+              "odds": 3.6
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                10,
+                11
+              ],
+              "odds": 4.8
+            },
+            {
+              "numbers": [
+                4,
+                10
+              ],
+              "odds": 14.0
+            },
+            {
+              "numbers": [
+                4,
+                11
+              ],
+              "odds": 16.6
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=4",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "seoul",
@@ -110581,8 +111139,8 @@
             6
           ],
           "horse_id": "0051265",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 511.0,
+          "horse_weight_change": 15.0,
           "previous_weight": 496.0,
           "average_weight": 512.0,
           "jockey_stats_1y": {
@@ -110694,8 +111252,8 @@
             6
           ],
           "horse_id": "0054543",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 481.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 484.0,
           "average_weight": 483.0,
           "jockey_stats_1y": {
@@ -110805,8 +111363,8 @@
             5
           ],
           "horse_id": "0056053",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 459.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 456.0,
           "average_weight": 452.0,
           "jockey_stats_1y": {
@@ -110918,8 +111476,8 @@
             8
           ],
           "horse_id": "0053008",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 477.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 476.0,
           "average_weight": 482.0,
           "jockey_stats_1y": {
@@ -111031,8 +111589,8 @@
             2
           ],
           "horse_id": "0053085",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 495.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 493.0,
           "average_weight": 487.0,
           "jockey_stats_1y": {
@@ -111144,8 +111702,8 @@
             4
           ],
           "horse_id": "0053284",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 502.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 506.0,
           "average_weight": 500.0,
           "jockey_stats_1y": {
@@ -111257,8 +111815,8 @@
             10
           ],
           "horse_id": "0047204",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 465.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 465.0,
           "average_weight": 446.0,
           "jockey_stats_1y": {
@@ -111370,8 +111928,8 @@
             4
           ],
           "horse_id": "0053278",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 507.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 503.0,
           "average_weight": 490.0,
           "jockey_stats_1y": null,
@@ -111475,8 +112033,8 @@
             7
           ],
           "horse_id": "0053420",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 477.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 472.0,
           "average_weight": 480.0,
           "jockey_stats_1y": {
@@ -111588,8 +112146,8 @@
             2
           ],
           "horse_id": "0053499",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 455.0,
+          "horse_weight_change": 8.0,
           "previous_weight": 447.0,
           "average_weight": 458.0,
           "jockey_stats_1y": {
@@ -111701,8 +112259,8 @@
             9
           ],
           "horse_id": "0051606",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 444.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 444.0,
           "average_weight": 439.0,
           "jockey_stats_1y": null,
@@ -111788,7 +112346,75 @@
         "sand_cm": 8.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                11
+              ],
+              "odds": 7.3
+            },
+            {
+              "numbers": [
+                1
+              ],
+              "odds": 2.5
+            },
+            {
+              "numbers": [
+                10
+              ],
+              "odds": 2.2
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                1,
+                11
+              ],
+              "odds": 30.9
+            },
+            {
+              "numbers": [
+                10,
+                11
+              ],
+              "odds": 29.7
+            },
+            {
+              "numbers": [
+                1,
+                10
+              ],
+              "odds": 9.8
+            }
+          ]
+        },
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=5",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "seoul",
@@ -111828,8 +112454,8 @@
             3
           ],
           "horse_id": "0056840",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 452.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 451.0,
           "average_weight": 445.0,
           "jockey_stats_1y": {
@@ -111941,8 +112567,8 @@
             4
           ],
           "horse_id": "0051110",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 484.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 491.0,
           "average_weight": 484.0,
           "jockey_stats_1y": null,
@@ -112046,8 +112672,8 @@
             8
           ],
           "horse_id": "0051463",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 475.0,
+          "horse_weight_change": -10.0,
           "previous_weight": 485.0,
           "average_weight": 458.0,
           "jockey_stats_1y": {
@@ -112159,8 +112785,8 @@
             4
           ],
           "horse_id": "0053023",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 486.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 484.0,
           "average_weight": 484.0,
           "jockey_stats_1y": {
@@ -112272,8 +112898,8 @@
             10
           ],
           "horse_id": "0055623",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 477.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 480.0,
           "average_weight": 476.0,
           "jockey_stats_1y": {
@@ -112385,8 +113011,8 @@
             3
           ],
           "horse_id": "0046999",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 468.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 473.0,
           "average_weight": 464.0,
           "jockey_stats_1y": {
@@ -112498,8 +113124,8 @@
             9
           ],
           "horse_id": "0055020",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 454.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 454.0,
           "average_weight": 454.0,
           "jockey_stats_1y": {
@@ -112611,8 +113237,8 @@
             4
           ],
           "horse_id": "0053992",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 457.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 452.0,
           "average_weight": 457.0,
           "jockey_stats_1y": {
@@ -112724,8 +113350,8 @@
             5
           ],
           "horse_id": "0053856",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 537.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 537.0,
           "average_weight": 529.0,
           "jockey_stats_1y": {
@@ -112837,8 +113463,8 @@
             5
           ],
           "horse_id": "0052989",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 475.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 472.0,
           "average_weight": 467.0,
           "jockey_stats_1y": null,
@@ -112942,8 +113568,8 @@
             10
           ],
           "horse_id": "0060717",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 492.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 487.0,
           "average_weight": 494.0,
           "jockey_stats_1y": {
@@ -113037,7 +113663,13 @@
         "sand_cm": 8.0
       },
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20260911"
+      "history_through_v7": "20260911",
+      "official_result": {
+        "status": "pending",
+        "version": 2,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=6",
+        "checked_at": "2026-09-12T15:31:11+09:00"
+      }
     },
     {
       "venue": "seoul",
@@ -113077,8 +113709,8 @@
             3
           ],
           "horse_id": "0055621",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 504.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 504.0,
           "average_weight": 511.0,
           "jockey_stats_1y": null,
@@ -113182,8 +113814,8 @@
             8
           ],
           "horse_id": "0045734",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 508.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 503.0,
           "average_weight": 496.0,
           "jockey_stats_1y": {
@@ -113295,8 +113927,8 @@
             3
           ],
           "horse_id": "0045700",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 515.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 519.0,
           "average_weight": 503.0,
           "jockey_stats_1y": {
@@ -113408,8 +114040,8 @@
             3
           ],
           "horse_id": "0055887",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 436.0,
+          "horse_weight_change": -9.0,
           "previous_weight": 445.0,
           "average_weight": 455.0,
           "jockey_stats_1y": {
@@ -113521,8 +114153,8 @@
             1
           ],
           "horse_id": "0055095",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 454.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 455.0,
           "average_weight": 455.0,
           "jockey_stats_1y": {
@@ -113634,8 +114266,8 @@
             3
           ],
           "horse_id": "0061827",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 474.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 469.0,
           "average_weight": 468.0,
           "jockey_stats_1y": {
@@ -113747,8 +114379,8 @@
             8
           ],
           "horse_id": "0053211",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 467.0,
+          "horse_weight_change": 10.0,
           "previous_weight": 457.0,
           "average_weight": 459.0,
           "jockey_stats_1y": {
@@ -113860,8 +114492,8 @@
             2
           ],
           "horse_id": "0055893",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 522.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 516.0,
           "average_weight": 523.0,
           "jockey_stats_1y": {
@@ -113973,8 +114605,8 @@
             6
           ],
           "horse_id": "0054620",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 483.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 484.0,
           "average_weight": 487.0,
           "jockey_stats_1y": null,
@@ -114078,8 +114710,8 @@
             5
           ],
           "horse_id": "0056388",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 457.0,
+          "horse_weight_change": -8.0,
           "previous_weight": 465.0,
           "average_weight": 461.0,
           "jockey_stats_1y": {
@@ -114191,8 +114823,8 @@
             6
           ],
           "horse_id": "0051296",
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 502.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 500.0,
           "average_weight": 495.0,
           "jockey_stats_1y": {
@@ -131072,8 +131704,8 @@
       "20260913"
     ],
     "results": {
-      "confirmed": 24,
-      "pending": 0,
+      "confirmed": 133,
+      "pending": 1,
       "errors": 0
     },
     "history_v7": {

@@ -1,0 +1,56 @@
+name: Import independent QPL project
+on:
+  push:
+    paths: ['.github/workflows/import-qpl.yml']
+permissions:
+  contents: write
+concurrency:
+  group: qpl-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: kkongt2/timeline
+          ref: ad70a7ab982509a32c5925e624e31d0aae6481c1
+          path: _qpl_seed
+          persist-credentials: false
+          sparse-checkout: qpl-profit
+      - name: Copy independent application
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          source=Path('_qpl_seed/qpl-profit')
+          if Path('index.html').exists(): raise RuntimeError('Application already exists; refusing repeated import')
+          for entry in source.iterdir():
+              if entry.name == '.github': continue
+              if entry.is_dir(): shutil.copytree(entry,Path(entry.name),dirs_exist_ok=True)
+              else: shutil.copy2(entry,Path(entry.name))
+          shutil.rmtree('_qpl_seed')
+          PY
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests beautifulsoup4
+      - name: Refresh race cards
+        run: python scripts/update_kra.py
+      - name: Validate application
+        run: |
+          node tests/model.cjs
+          node tests/ui.cjs
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Save standalone project
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Import independent QPL application and official historical evidence'
+          git push origin HEAD:main

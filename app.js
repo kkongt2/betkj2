@@ -61,7 +61,7 @@ function renderRace(r){
   }else{
     const cs=raceCandidates(r),chosen=chosenCandidates(cs),keys=new Set(chosen.map(key));
     const recommend=!state.tuning&&state.model.approved&&fresh&&Number.isFinite(start);
-    html+=`<div class="notice">${!fresh?'데이터가 오래되었습니다. 갱신 후 판단해 주세요. ':''}${recommend?(chosen.length?'검증 기준을 통과한 조건의 조합입니다.':'현재 연구 조건을 충족하는 조합이 없습니다.'):state.model.approved?'경주 시각·데이터 상태 확인이 필요해 추천을 보류합니다.':'장기 흑자 검증이 부족해 베팅 추천을 보류합니다. 연구 후보를 기대수익 순으로 표시합니다.'} 예상 배당은 실제 시세와 다를 수 있습니다.</div>`;
+    html+=`<div class="notice">${!fresh?'데이터가 오래되었습니다. 갱신 후 판단해 주세요. ':''}${recommend?(chosen.length?'검증 기준을 통과한 조건의 조합입니다.':'현재 연구 조건을 충족하는 조합이 없습니다.'):state.model.approved?'경주 시각·데이터 상태 확인이 필요해 추천을 보류합니다.':'장기 흑자 검증이 부족해 베팅 추천을 보류합니다. 연구 후보를 현재 설정의 점수 순으로 표시합니다.'} 예상 배당은 실제 시세와 다를 수 있습니다.</div>`;
   }
   if(state.tuning)html+='<p class="small">사용자 가중치로 정렬한 연구 후보입니다. 추정확률·배당·손익분기배당은 원래 모델의 값이며 가중치로 재학습하지 않습니다.</p>';
   const cs=raceCandidates(r),keys=new Set(chosenCandidates(cs).map(key));

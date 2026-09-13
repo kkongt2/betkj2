@@ -1,5 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),zlib=require('node:zlib'),T=require('../tuning.js');
 const data=JSON.parse(zlib.gunzipSync(fs.readFileSync('data/tuning.json.gz'))),r=JSON.parse(fs.readFileSync('data/backtest.json')),base=T.backtest(data,T.defaults());
+const selection=T.backtest(data,{...T.defaults(),period:'2025'});assert.equal(selection.bets,r.selection.bets);assert.equal(selection.profit_krw,r.selection.profit_krw);
 assert.equal(base.bets,r.evaluation.bets);assert.equal(base.profit_krw,r.evaluation.profit_krw);assert.equal(Math.round(base.curve.at(-1).profit_units*1000),base.profit_krw);
 const zero=T.backtest(data,{...T.defaults(),weights:Array(9).fill(0)});assert.equal(zero.bets,0);assert.equal(zero.profit_krw,0);assert.equal(zero.roi,null);
 const s={...T.defaults(),weights:[0,0,0,100,0,0,0,0,0]},alt=T.backtest(data,s);assert.notDeepEqual(alt.ledger,base.ledger);

@@ -132,7 +132,7 @@ def run():
     Path('data/model.json').write_text(json.dumps(model,separators=(',',':')))
     Path('data/backtest.json').write_text(json.dumps(report,ensure_ascii=False,separators=(',',':')))
     Path('data/backtest-bets.json').write_text(json.dumps(bets,separators=(',',':')))
-    fixture=next(r for r in use if r['date']>='20260101');FX,ij=pair_features(fixture['X'])
+    fixture=next(r for r in use if r['date']>='20260101');FX,ij=pair_features(fixture['X']);FX=FX.astype(np.float32)
     fp=expit(a*logit(classifier.predict_proba(FX)[:,1])+b);fd=np.maximum(1,models[loss].predict(FX)*scales[loss])
     Path('data/parity.json').write_text(json.dumps(dict(horses=[dict(number=n,features_v7=x) for n,x in zip(fixture['numbers'],fixture['X'])],expected=[dict(numbers=sorted([fixture['numbers'][i],fixture['numbers'][j]]),prob=float(pr),dividend=float(di)) for (i,j),pr,di in zip(ij,fp,fd)]),separators=(',',':')))
     print('COMPLETE',json.dumps({k:report[k] for k in ['approved','policy','counts']},ensure_ascii=False),flush=True)

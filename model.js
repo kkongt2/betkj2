@@ -36,7 +36,7 @@
     if(X.some(x=>!Array.isArray(x)||x.length!==52||x.some(v=>!Number.isFinite(v))||Math.abs(x[20]-n/20)>1e-7))return [];
     const out=[];
     for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){
-      const f=features(X,i,j),raw=Math.max(1e-6,Math.min(1-1e-6,estimate(model.classifier,f)));
+      const f=Array.from(Float32Array.from(features(X,i,j))),raw=Math.max(1e-6,Math.min(1-1e-6,estimate(model.classifier,f)));
       const p=sigmoid(model.calibrator.a*Math.log(raw/(1-raw))+model.calibrator.b);
       const d=Math.max(1,estimate(model.dividend,f)*model.dividend_scale);
       if(!Number.isFinite(p)||p<=0||p>=1)throw Error('확률 계산 오류');

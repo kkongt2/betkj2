@@ -1,0 +1,2 @@
+const fs=require('node:fs'),crypto=require('node:crypto');
+try{const m=JSON.parse(fs.readFileSync('data/tuning-manifest.json')),hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),gen=crypto.createHash('sha256').update(['model.js','tuning.js','scripts/export_tuning.py','scripts/export_tuning.cjs'].map(p=>fs.readFileSync(p,'utf8')).join('\n')).digest('hex');if(m.model_sha256!==hash('data/model.json')||m.file_sha256!==hash('data/tuning.json.gz')||m.generator_sha256!==gen)process.exit(1);}catch{process.exit(1);}

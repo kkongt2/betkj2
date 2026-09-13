@@ -8,12 +8,12 @@ const colored=x=>x>=0?'positive':'negative';
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).replace(/-/g,'');
 const dateLabel=s=>`${Number(s.slice(4,6))}.${Number(s.slice(6,8))} (${new Intl.DateTimeFormat('ko-KR',{weekday:'short',timeZone:'Asia/Seoul'}).format(new Date(`${s.slice(0,4)}-${s.slice(4,6)}-${s.slice(6,8)}T12:00:00+09:00`))})`;
 const key=c=>c.numbers.join('-');
-function chart(items){
+function chart(items,label='분리 평가 기간의 일별 누적 세전 손익'){
   if(!items.length)return '';
   const vals=[0,...items.map(x=>x.profit_units*1000)],lo=Math.min(...vals),hi=Math.max(...vals),span=hi-lo||1;
   const y=v=>112-(v-lo)/span*100,x=i=>10+i/(vals.length-1)*780;
   const points=vals.map((v,i)=>`${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
-  return `<svg class="chart" viewBox="0 0 800 130" role="img" aria-label="분리 평가 기간의 일별 누적 세전 손익"><line x1="10" y1="${y(0)}" x2="790" y2="${y(0)}" stroke="#cdd7cc" stroke-dasharray="4 5"/><polyline points="${points}" fill="none" stroke="${vals.at(-1)>=0?'#327557':'#aa5346'}" stroke-width="2.5" vector-effect="non-scaling-stroke"/><circle cx="790" cy="${y(vals.at(-1))}" r="4" fill="#327557"/></svg>`;
+  return `<svg class="chart" viewBox="0 0 800 130" role="img" aria-label="${esc(label)}"><line x1="10" y1="${y(0)}" x2="790" y2="${y(0)}" stroke="#cdd7cc" stroke-dasharray="4 5"/><polyline points="${points}" fill="none" stroke="${vals.at(-1)>=0?'#327557':'#aa5346'}" stroke-width="2.5" vector-effect="non-scaling-stroke"/><circle cx="790" cy="${y(vals.at(-1))}" r="4" fill="#327557"/></svg>`;
 }
 function evidence(){
   const r=state.report,e=r.evaluation,s=r.selection,b=r.baseline;
@@ -36,8 +36,15 @@ function selectors(){
   $('rounds').replaceChildren(...races.map(r=>button(`${r.race_no}R`,r.race_no,state.round,x=>{state.round=x;selectors();})));
   renderRace(races.find(r=>r.race_no===state.round));
 }
+let tuningCache=new WeakMap();
+function raceCandidates(r){
+  if(!state.tuning)return QPL.predict(r,state.model);
+  let cs=tuningCache.get(r);if(!cs){cs=Tuning.decorate(QPL.predict(r,state.model),r.horses);tuningCache.set(r,cs);}
+  return Tuning.rank(cs,state.tuning);
+}
+function chosenCandidates(cs){return state.tuning?Tuning.select(cs,state.tuning):QPL.selection(cs,state.model);}
 function candidate(c,i,preferred){
-  return `<article class="candidate ${preferred?'preferred':''}"><div class="candidate-top"><div><p class="rank">${preferred?'조건 충족 · ':''}${state.model.approved?'후보':'연구 후보'} ${i+1}</p><div class="numbers"><span class="horse-number">${c.numbers[0]}</span><span>—</span><span class="horse-number">${c.numbers[1]}</span></div><p class="names">${c.names.map(esc).join(' · ')}</p></div><div class="edge"><span>추정 기대수익률</span><strong class="${colored(c.edge)}">${c.edge>0?'+':''}${pct(c.edge)}</strong></div></div><div class="candidate-stats"><div><span>추정 적중확률</span><strong>${pct(c.prob)}</strong></div><div><span>예상 배당 · 모델 추정</span><strong>${c.dividend.toFixed(2)}배</strong></div><div><span>손익분기 배당 · 1/p</span><strong>${c.break_even.toFixed(2)}배</strong></div></div></article>`;
+  return `<article class="candidate ${preferred?'preferred':''}"><div class="candidate-top"><div><p class="rank">${preferred?'선택 · ':''}${state.tuning?'가중치 ':''}${state.model.approved?'후보':'연구 후보'} ${i+1}</p><div class="numbers"><span class="horse-number">${c.numbers[0]}</span><span>—</span><span class="horse-number">${c.numbers[1]}</span></div><p class="names">${c.names.map(esc).join(' · ')}</p></div><div class="edge"><span>추정 기대수익률</span><strong class="${colored(c.edge)}">${c.edge>0?'+':''}${pct(c.edge)}</strong></div></div>${state.tuning?`<p class="tuning-score">사용자 점수 ${c.tuningScore.toFixed(1)} / 100 · 순위 비교용, 확률 아님</p>`:''}<div class="candidate-stats"><div><span>추정 적중확률</span><strong>${pct(c.prob)}</strong></div><div><span>예상 배당 · 모델 추정</span><strong>${c.dividend.toFixed(2)}배</strong></div><div><span>손익분기 배당 · 1/p</span><strong>${c.break_even.toFixed(2)}배</strong></div></div></article>`;
 }
 function renderRace(r){
   const age=(Date.now()-Date.parse(state.doc.updated_at))/60000,fresh=Number.isFinite(age)&&age>=-5&&age<=30;
@@ -52,11 +59,12 @@ function renderRace(r){
     if(pp?.status==='confirmed'&&Array.isArray(pp.payouts))html+=`<div class="panel"><h2>복연승 실제 결과</h2><table><thead><tr><th>적중 조합</th><th>확정 배당</th></tr></thead><tbody>${pp.payouts.map(p=>`<tr><td>${p.numbers.map(esc).join(' — ')}</td><td>${Number(p.odds).toFixed(1)}배</td></tr>`).join('')}</tbody></table></div>`;
     else html+=`<div class="empty">${pp?.status==='refund'?'복연승 환불 경주입니다.':'공식 복연승 결과가 아직 확인되지 않았습니다.'}</div>`;
   }else{
-    const cs=QPL.predict(r,state.model),chosen=QPL.selection(cs,state.model),keys=new Set(chosen.map(key));
-    const recommend=state.model.approved&&fresh&&Number.isFinite(start);
+    const cs=raceCandidates(r),chosen=chosenCandidates(cs),keys=new Set(chosen.map(key));
+    const recommend=!state.tuning&&state.model.approved&&fresh&&Number.isFinite(start);
     html+=`<div class="notice">${!fresh?'데이터가 오래되었습니다. 갱신 후 판단해 주세요. ':''}${recommend?(chosen.length?'검증 기준을 통과한 조건의 조합입니다.':'현재 연구 조건을 충족하는 조합이 없습니다.'):state.model.approved?'경주 시각·데이터 상태 확인이 필요해 추천을 보류합니다.':'장기 흑자 검증이 부족해 베팅 추천을 보류합니다. 연구 후보를 기대수익 순으로 표시합니다.'} 예상 배당은 실제 시세와 다를 수 있습니다.</div>`;
   }
-  const cs=QPL.predict(r,state.model),keys=new Set(QPL.selection(cs,state.model).map(key));
+  if(state.tuning)html+='<p class="small">사용자 가중치로 정렬한 연구 후보입니다. 추정확률·배당·손익분기배당은 원래 모델의 값이며 가중치로 재학습하지 않습니다.</p>';
+  const cs=raceCandidates(r),keys=new Set(chosenCandidates(cs).map(key));
   if(ended)html+='<h3>예측 조합 · 과거 데이터 재계산</h3>';
   if(cs.length){
     html+=`<div class="candidate-grid">${cs.slice(0,2).map((c,i)=>candidate(c,i,keys.has(key(c)))).join('')}</div>`;
@@ -70,7 +78,7 @@ async function load(){
   try{
     const [doc,model,report]=await Promise.all([json('data/latest.json'),json('data/model.json'),json('data/backtest.json')]);
     if(!Array.isArray(doc.races)||!doc.updated_at||report.schema!==1||model.schema!==1||model.approved!==report.approved||JSON.stringify(model.policy)!==JSON.stringify(report.policy))throw Error('데이터·모델 버전이 맞지 않습니다.');
-    Object.assign(state,{doc,model,report});evidence();selectors();
+    Object.assign(state,{doc,model,report});tuningCache=new WeakMap();if(typeof Tuner!=='undefined')Tuner.init();evidence();selectors();
   }catch(e){$('race-content').innerHTML=`<div class="empty">${esc(e.message)}<br>잠시 후 새로고침해 주세요.</div>`;$('freshness').textContent='데이터를 새로 확인하지 못했습니다.';}
   finally{$('refresh').disabled=false;}
 }

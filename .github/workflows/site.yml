@@ -32,17 +32,28 @@ jobs:
       - name: Refresh official cards and past results
         if: github.event_name != 'push'
         run: python scripts/update_kra.py
+      - name: Prepare interactive simulation archive
+        run: |
+          if ! node scripts/check_tuning.cjs; then
+            python scripts/export_tuning.py
+          fi
       - name: Validate published assets
         run: |
           python scripts/recalculate_past.py --fetch-missing
           node tests/model.cjs
           node tests/ui.cjs
+          node tests/tuning.cjs
           python -m unittest discover -s tests -p 'test_*.py'
+      - name: Verify interactive mobile browser
+        if: github.event_name == 'push'
+        run: |
+          npm install --prefix /tmp/qpl-browser playwright
+          NODE_PATH=/tmp/qpl-browser/node_modules node tests/tuning-browser.cjs
       - name: Preserve latest public input data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/latest.json data/history-context-v7.json.gz
+          git add data/latest.json data/history-context-v7.json.gz data/tuning.json.gz data/tuning-manifest.json
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh QPL race inputs and official outcomes'
             git push origin HEAD:main
@@ -51,8 +62,8 @@ jobs:
       - name: Build static artifact
         run: |
           mkdir -p public/data
-          cp index.html app.js model.js style.css public/
-          cp data/latest.json data/model.json data/backtest.json public/data/
+          cp index.html app.js model.js style.css tuning.js tuning-ui.js tuning-worker.js public/
+          cp data/latest.json data/model.json data/backtest.json data/tuning.json.gz data/tuning-manifest.json public/data/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

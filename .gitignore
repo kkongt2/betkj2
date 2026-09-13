@@ -3,3 +3,6 @@ __pycache__/
 training/raw/
 data/debug.json
 .venv/
+
+tuning-build.log
+data/tuning-input.tmp.json

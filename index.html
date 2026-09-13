@@ -3,8 +3,21 @@
 <body><main>
 <header><a class="brand" href="./" aria-label="복연승 홈"><span class="mark">↗</span><span>복연승<span class="brand-sub">QPL LAB</span></span></a><span class="pill">정액 수익 모델</span></header>
 <section class="intro"><p class="eyebrow">SAME STAKE. LONG VIEW.</p><h1>한 조합, 같은 금액.<br><span>누적 수익을 봅니다.</span></h1><p>조합마다 1,000원. 추정 기대수익으로 비교하고,<br class="desktop-break">기간을 분리한 백테스트로 검증합니다.</p></section>
-<section class="panel evidence" aria-labelledby="evidence-title"><div class="section-top"><h2 id="evidence-title">분리 평가 결과</h2><span id="verified" class="pill">계산 결과 불러오는 중</span></div><div id="metrics" class="metrics"></div><div id="chart"></div><p id="evaluation-note" class="small"></p><details><summary>월별 손익과 검증 내용</summary><div id="validation"></div></details></section>
+<section class="panel tuning-panel" aria-labelledby="tune-title">
+<div class="section-top"><h2 id="tune-title">가중치 실험실</h2><button id="tune-reset" class="text-button" type="button">기본값 복원</button></div>
+<p>슬라이더를 움직이면 아래 경주의 후보 순위와 과거 누적손익이 함께 바뀝니다. 각 조합에 1,000원씩 고정 베팅합니다.</p>
+<div id="tune-controls" class="weight-grid"></div>
+<details class="tune-options"><summary>선택 조건·평가 범위</summary>
+<label for="tune-edge">모델 기대수익률 하한 <output id="tune-edge-value"></output></label><input id="tune-edge" type="range" min="-50" max="100" step="5">
+<div class="tune-selects"><label>경주당 최대 선택<select id="tune-count"><option value="1">1조합</option><option value="2">2조합</option><option value="3">3조합</option></select></label><label>손익 평가 기간<select id="tune-period"><option value="2026">2026년 · 기존 평가 구간</option><option value="2025">2025년 · 기존 조건 선택 구간</option><option value="all">전체 · 2025.04–2026.09</option></select></label><label>손익 평가 지역<select id="tune-venue"><option value="all">전체</option><option value="seoul">서울</option><option value="busan">부산경남</option><option value="jeju">제주</option></select></label></div></details>
+<p id="tune-coverage" class="small"></p><p id="tune-status" role="status">모델을 불러온 뒤 시뮬레이션 자료를 준비합니다.</p>
+<div id="tune-results" aria-busy="true"><div id="tune-metrics" class="metrics"></div><div id="tune-chart"></div><p id="tune-dd" class="small"></p><details><summary>월별·지역별 손익</summary><div id="tune-months"></div></details></div>
+<div class="tune-actions"><button id="tune-download" type="button" disabled>선택·정산 내역 CSV</button><button id="tune-retry" type="button">자료 다시 불러오기</button></div>
+<details><summary>가중치 계산법과 해석</summary><p>각 항목은 같은 경주의 모든 조합 중 최솟값 0, 최댓값 100으로 환산(0.01점 단위)하고, 가중치의 합으로 나눈 가중 평균으로 순위를 정합니다. 항목 값이 모두 같으면 50점입니다. 모든 가중치가 0이면 베팅하지 않습니다.</p><p>모델 기대수익률 하한을 통과한 조합에서 사용자 점수 순으로 선택합니다. 동점은 모델 기대수익률과 마번 순으로 정합니다. 기본값은 예상수익 100·나머지 0, 하한 10%, 경주당 1조합이며 기존 고정 모델의 선택을 재현합니다. 사용자 점수는 확률이 아니며 모델을 재학습하는 기능도 아닙니다.</p><p>과거 실제 배당은 선택이 끝난 뒤 정산에만 사용합니다. 과거 결과를 보며 가중치를 고르면 해당 기간의 결과에 맞춰질 수 있으므로, 조정 후 흑자는 새로운 독립 검증 성과가 아닙니다. 기존 모델의 검증 결과는 아래에 별도로 유지합니다. 세전 손익이며 개인별 세금·입장 비용은 제외합니다.</p><p>가중치는 이 브라우저에 자동 저장됩니다. 후보 조회 날짜·지역과 손익 평가 범위는 별도입니다. 최초 자료 다운로드 후 계산은 기기에서 실행됩니다.</p></details>
+</section>
+
+<section class="panel evidence" aria-labelledby="evidence-title"><div class="section-top"><h2 id="evidence-title">기존 고정 모델 · 분리 평가 결과</h2><span id="verified" class="pill">계산 결과 불러오는 중</span></div><div id="metrics" class="metrics"></div><div id="chart"></div><p id="evaluation-note" class="small"></p><details><summary>월별 손익과 검증 내용</summary><div id="validation"></div></details></section>
 <section class="races" aria-labelledby="race-title"><div class="section-top"><h2 id="race-title">경주별 조합</h2><button id="refresh" class="text-button" type="button">새로고침 ↻</button></div><div id="venues" class="segments" role="group" aria-label="경마장"></div><div class="filter-label">경주일 <span>지지난주부터 · 실제 경주일만 표시</span></div><div id="dates" class="chips" role="group" aria-label="경주일"></div><div id="rounds" class="rounds" role="group" aria-label="경주 번호"></div><p id="freshness" class="small" role="status"></p><div id="race-content" aria-live="polite"><div class="empty">경주 데이터를 불러오고 있습니다.</div></div></section>
 <section class="panel rules"><p class="eyebrow">ONE CRITERION</p><h2>추천 기준은 하나입니다.</h2><p class="formula">추정 적중확률 × 예상 배당 − 1</p><p>이 값이 클수록 같은 금액을 걸었을 때의 추정 기대수익이 큽니다. 실제 확정 배당은 과거 손익 평가에만 사용합니다.</p><p id="policy"></p><details><summary>데이터와 계산 가정</summary><div id="method"></div></details></section>
 <footer>복연승 수익 연구 · 배당은 실시간 시세가 아닌 모델 추정치입니다.</footer>
-</main><script src="model.js"></script><script src="app.js"></script></body></html>
+</main><script src="model.js"></script><script src="tuning.js"></script><script src="app.js"></script><script src="tuning-ui.js"></script></body></html>

@@ -1,4 +1,4 @@
-importScripts('tuning.js?v=presets-1');
+importScripts('tuning.js?v=stake-10000-v1');
 let data=null;
 self.onmessage=async({data:msg})=>{
 try{

@@ -12,8 +12,8 @@ assert.equal(api.predict({...race,horses:race.horses.map((h,i)=>i? h:{...h,featu
 assert.deepEqual(model.policy,report.policy);assert.equal(model.approved,report.approved);
 const bets=read('data/backtest-bets.json'),payouts=JSON.parse(zlib.gunzipSync(fs.readFileSync('training/payouts.json.gz')));
 const index=new Map(payouts.map(r=>[`${r.date}/${r.venue}/${r.race_no}`,r.payouts]));let profit=0;
-for(const b of bets){assert.ok(b.date>='20260101'&&b.date<='20260910');const p=index.get(`${b.date}/${b.venue}/${b.race_no}`);assert.ok(p);assert.equal(b.gross,p[b.numbers.join('-')]||0);assert.ok(b.edge>=model.policy.min_edge);profit+=(b.gross-1)*1000;}
-assert.equal(Math.round(profit),report.evaluation.profit_krw);assert.equal(bets.length*1000,report.evaluation.stake_krw);
+for(const b of bets){assert.ok(b.date>='20260101'&&b.date<='20260910');const p=index.get(`${b.date}/${b.venue}/${b.race_no}`);assert.ok(p);assert.equal(b.gross,p[b.numbers.join('-')]||0);assert.ok(b.edge>=model.policy.min_edge);profit+=(b.gross-1)*10000;}
+assert.equal(Math.round(profit),report.evaluation.profit_krw);assert.equal(bets.length*10000,report.evaluation.stake_krw);
 const e=report.evaluation,s=report.selection;
 assert.equal(model.approved,s.profit_units>0&&e.bets>=200&&e.dates>=60&&e.roi_95ci[0]>0&&e.without_best_day_profit_krw>0);
 console.log('PASS model parity, permutation, feature guards, equal-stake accounting, official dividend labels and deployment gate');

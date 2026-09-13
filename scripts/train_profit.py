@@ -1,7 +1,7 @@
 """One frozen profit experiment. Do not retune after viewing the 2026 evaluation.
 
 Realized final dividends are outcomes only. Every feature uses strictly earlier
-race dates. Equal 1,000 KRW per selected combination; no compounding/chasing.
+race dates. Equal 10,000 KRW per selected combination; no compounding/chasing.
 """
 import gzip, hashlib, json
 from collections import defaultdict
@@ -14,10 +14,11 @@ from features_v7 import prepare,FEATURES,PAIR_COLUMNS,VERSION
 from profit_model import pair_features,export
 
 SEED=20260912
+STAKE=10000
 EXPERIMENT=dict(train=['20220101','20241231'],calibrate=['20250101','20250331'],
     selection=['20250401','20251231'],evaluation=['20260101','20260910'],
     dividend_losses=['gamma','poisson'],min_edges=[0,.05,.1,.2,.35,.5,.75,1.0],max_per_race=[1,2,3],
-    min_selection_bets=200,min_selection_dates=60,unit_stake_krw=1000,
+    min_selection_bets=200,min_selection_dates=60,unit_stake_krw=STAKE,
     objective='maximum total settled pre-tax net profit at equal stake per combination',
     deployment_gate='selection profit > 0; evaluation >=200 bets and >=60 dates; date-bootstrap 95% ROI lower bound >0; profit remains >0 without best day')
 
@@ -41,13 +42,13 @@ def stats(bets,ci=False):
         equity+=p;peak=max(peak,equity);drawdown=max(drawdown,peak-equity)
         curve.append(dict(date=day,profit_units=round(equity,4)))
         day_streak=day_streak+1 if p<0 else 0;losing_days=max(losing_days,day_streak)
-    out=dict(bets=n,races=len(races),dates=len(days),stake_krw=n*1000,return_krw=round((net+n)*1000),
-        profit_krw=round(net*1000),profit_units=round(net,6),roi=net/n if n else None,
+    out=dict(bets=n,races=len(races),dates=len(days),stake_krw=n*STAKE,return_krw=round((net+n)*STAKE),
+        profit_krw=round(net*STAKE),profit_units=round(net,6),roi=net/n if n else None,
         hit_rate=sum(b['gross']>0 for b in bets)/n if n else None,
         mean_hit_dividend=float(np.mean([b['gross'] for b in bets if b['gross']])) if any(b['gross'] for b in bets) else None,
-        daily_max_drawdown_krw=round(drawdown*1000),max_losing_bet_streak=losses,max_losing_days=losing_days,
-        without_best_day_profit_krw=round((net-max((v[0] for v in days.values()),default=0))*1000),
-        months=[dict(month=m,profit_krw=round(p*1000),bets=int(c),roi=p/c) for m,(p,c) in sorted(months.items())],curve=curve)
+        daily_max_drawdown_krw=round(drawdown*STAKE),max_losing_bet_streak=losses,max_losing_days=losing_days,
+        without_best_day_profit_krw=round((net-max((v[0] for v in days.values()),default=0))*STAKE),
+        months=[dict(month=m,profit_krw=round(p*STAKE),bets=int(c),roi=p/c) for m,(p,c) in sorted(months.items())],curve=curve)
     if ci:
         rng=np.random.default_rng(SEED);a=np.array(list(days.values()));values=[]
         if len(a):
@@ -112,7 +113,7 @@ def run():
     for r in test:
         v=max(r['candidates'],key=lambda c:c['prob']);baseline.append(dict(v,date=r['date'],venue=r['venue'],race_no=r['race_no']))
     approved=bool(selection['profit_units']>0 and evaluation['bets']>=200 and evaluation['dates']>=60 and evaluation['roi_95ci'][0]>0 and evaluation['without_best_day_profit_krw']>0)
-    report=dict(schema=1,name='QPL flat-stake profit v1',objective=EXPERIMENT['objective'],unit_stake_krw=1000,policy=policy,
+    report=dict(schema=1,name='QPL flat-stake profit v1',objective=EXPERIMENT['objective'],unit_stake_krw=STAKE,policy=policy,
         approved=approved,selection=selection,evaluation=evaluation,baseline=stats(baseline,True),
         by_venue={v:stats([x for x in bets if x['venue']==v],True) for v in ['seoul','busan','jeju']},
         counts=dict(history_races=len(rows),payout_races=len(payout_rows),used_races=len(use),pairs=len(y),

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f6f2"><meta name="description" content="동일 금액의 장기 수익을 기준으로 복연승 조합을 분석합니다."><title>복연승 · 같은 금액, 누적 수익</title><link rel="stylesheet" href="style.css?v=presets-1"></head>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f6f2"><meta name="description" content="동일 금액의 장기 수익을 기준으로 복연승 조합을 분석합니다."><title>복연승 · 같은 금액, 누적 수익</title><link rel="stylesheet" href="style.css?v=stake-10000-v1"></head>
 <body><main>
 <header><a class="brand" href="./" aria-label="복연승 홈"><span class="mark">↗</span><span>복연승<span class="brand-sub">QPL LAB</span></span></a><span class="pill">정액 수익 모델</span></header>
-<section class="intro"><p class="eyebrow">SAME STAKE. LONG VIEW.</p><h1>한 조합, 같은 금액.<br><span>누적 수익을 봅니다.</span></h1><p>조합마다 1,000원. 추정 기대수익으로 비교하고,<br class="desktop-break">기간을 분리한 백테스트로 검증합니다.</p></section>
+<section class="intro"><p class="eyebrow">SAME STAKE. LONG VIEW.</p><h1>한 조합, 같은 금액.<br><span>누적 수익을 봅니다.</span></h1><p>조합마다 10,000원. 추정 기대수익으로 비교하고,<br class="desktop-break">기간을 분리한 백테스트로 검증합니다.</p></section>
 <section class="panel tuning-panel" aria-labelledby="tune-title">
 <div class="section-top"><h2 id="tune-title">가중치 실험실</h2><button id="tune-reset" class="text-button" type="button">기본값 복원</button></div>
-<p>슬라이더를 움직이면 아래 경주의 후보 순위와 과거 누적손익이 함께 바뀝니다. 각 조합에 1,000원씩 고정 베팅합니다.</p>
+<p>슬라이더를 움직이면 아래 경주의 후보 순위와 과거 누적손익이 함께 바뀝니다. 각 조합에 10,000원씩 고정 베팅합니다.</p>
 <div class="preset-tools">
 <div class="section-top"><button id="tune-lock" type="button" aria-pressed="false">가중치 잠금</button><span id="tune-lock-note" class="small"></span></div>
 <label for="preset-name">현재 조합 저장</label><div class="preset-row"><input id="preset-name" type="text" maxlength="40" placeholder="예: 주말용 · 수익 중심"><button id="preset-save" type="button">새 이름으로 저장</button></div>
@@ -30,4 +30,4 @@
 <section class="races" aria-labelledby="race-title"><div class="section-top"><h2 id="race-title">경주별 조합</h2><button id="refresh" class="text-button" type="button">새로고침 ↻</button></div><div id="venues" class="segments" role="group" aria-label="경마장"></div><div class="filter-label">경주일 <span>지지난주부터 · 실제 경주일만 표시</span></div><div id="dates" class="chips" role="group" aria-label="경주일"></div><div id="rounds" class="rounds" role="group" aria-label="경주 번호"></div><p id="freshness" class="small" role="status"></p><div id="race-content" aria-live="polite"><div class="empty">경주 데이터를 불러오고 있습니다.</div></div></section>
 <section class="panel rules"><p class="eyebrow">ONE CRITERION</p><h2>기존 고정 모델의 추천 기준</h2><p class="formula">추정 적중확률 × 예상 배당 − 1</p><p>이 값이 클수록 같은 금액을 걸었을 때의 추정 기대수익이 큽니다. 실제 확정 배당은 과거 손익 평가에만 사용합니다.</p><p id="policy"></p><details><summary>데이터와 계산 가정</summary><div id="method"></div></details></section>
 <footer>복연승 수익 연구 · 배당은 실시간 시세가 아닌 모델 추정치입니다.</footer>
-</main><script src="model.js?v=presets-1"></script><script src="tuning.js?v=presets-1"></script><script src="preset-store.js?v=presets-1"></script><script src="app.js?v=presets-1"></script><script src="tuning-ui.js?v=presets-1"></script></body></html>
+</main><script src="model.js?v=stake-10000-v1"></script><script src="tuning.js?v=stake-10000-v1"></script><script src="preset-store.js?v=stake-10000-v1"></script><script src="app.js?v=stake-10000-v1"></script><script src="tuning-ui.js?v=stake-10000-v1"></script></body></html>

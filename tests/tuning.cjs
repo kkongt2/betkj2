@@ -1,12 +1,12 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),zlib=require('node:zlib'),T=require('../tuning.js');
 const data=JSON.parse(zlib.gunzipSync(fs.readFileSync('data/tuning.json.gz'))),r=JSON.parse(fs.readFileSync('data/backtest.json')),base=T.backtest(data,T.defaults());
 const selection=T.backtest(data,{...T.defaults(),period:'2025'});assert.equal(selection.bets,r.selection.bets);assert.equal(selection.profit_krw,r.selection.profit_krw);
-assert.equal(base.bets,r.evaluation.bets);assert.equal(base.profit_krw,r.evaluation.profit_krw);assert.equal(Math.round(base.curve.at(-1).profit_units*1000),base.profit_krw);
+assert.equal(base.bets,r.evaluation.bets);assert.equal(base.profit_krw,r.evaluation.profit_krw);assert.equal(Math.round(base.curve.at(-1).profit_units*10000),base.profit_krw);
 const zero=T.backtest(data,{...T.defaults(),weights:Array(9).fill(0)});assert.equal(zero.bets,0);assert.equal(zero.profit_krw,0);assert.equal(zero.roi,null);
 const s={...T.defaults(),weights:[0,0,0,100,0,0,0,0,0]},alt=T.backtest(data,s);assert.notDeepEqual(alt.ledger,base.ledger);
 const changed=JSON.parse(JSON.stringify(data));for(const race of changed.races)for(const row of race.rows)row[3]=999;
 const pick=x=>x.ledger.map(b=>[b.date,b.venue,b.race_no,b.numbers]);assert.deepEqual(pick(T.backtest(changed,s)),pick(alt));
-for(const b of alt.ledger)assert.equal(b.profit_krw,Math.round((b.gross-1)*1000));
+for(const b of alt.ledger)assert.equal(b.profit_krw,Math.round((b.gross-1)*10000));
 let totals=0;for(const venue of ['seoul','busan','jeju']){const v=T.backtest(data,{...s,venue});assert.ok(v.ledger.every(b=>b.venue===venue));totals+=v.profit_krw;}assert.equal(totals,alt.profit_krw);
 assert.ok(T.backtest(data,{...s,period:'2025'}).ledger.every(b=>b.date.startsWith('2025')));
 const sum=T.backtest(data,{...s,period:'all'}).profit_krw;assert.equal(sum,alt.profit_krw+T.backtest(data,{...s,period:'2025'}).profit_krw);

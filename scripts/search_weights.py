@@ -1,6 +1,6 @@
 """Reproducible exploratory weight search. These dates are already observed;
 never label the search result independent validation or approved betting advice.
-Only weights vary; EV >= .10, max 1/race, flat 1000 KRW remain fixed.
+Only weights vary; EV >= .10, max 1/race, flat 10000 KRW remain fixed.
 """
 import gzip,json,hashlib
 from pathlib import Path
@@ -49,7 +49,7 @@ def run():
         evaluate(neighbors)
         print('SEARCH',count,{k:v['net'] for k,v in best.items()},flush=True)
     out=dict(schema=1,seed=SEED,source_sha256=hashlib.sha256(raw).hexdigest(),searched=count,user_weights=USER,user_net_units=seen[tuple(USER)],best=best,
-        fixed_policy=dict(minEdge=.1,maxPerRace=1,stake_krw=1000),
+        fixed_policy=dict(minEdge=.1,maxPerRace=1,stake_krw=10000),
         limits='Exploratory in-sample search over previously observed 2025/2026 dates. No independent holdout remains. Bounded search, not global optimum. Metrics do not prove future profit.',
         options=[dict(weights=list(k),net_units=v) for k,v in seen.items()])
     Path('data/weight-search.json').write_text(json.dumps(out,separators=(',',':')))

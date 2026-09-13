@@ -6,3 +6,8 @@ data/debug.json
 
 tuning-build.log
 data/tuning-input.tmp.json
+
+weight-search.log
+
+weight-report.log
+data/weight-search.json

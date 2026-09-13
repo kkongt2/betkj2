@@ -43,6 +43,7 @@ jobs:
           node tests/model.cjs
           node tests/ui.cjs
           node tests/tuning.cjs
+          node tests/presets.cjs
           python -m unittest discover -s tests -p 'test_*.py'
       - name: Verify interactive mobile browser
         if: github.event_name == 'push'
@@ -62,8 +63,8 @@ jobs:
       - name: Build static artifact
         run: |
           mkdir -p public/data
-          cp index.html app.js model.js style.css tuning.js tuning-ui.js tuning-worker.js public/
-          cp data/latest.json data/model.json data/backtest.json data/tuning.json.gz data/tuning-manifest.json public/data/
+          cp index.html app.js model.js style.css tuning.js tuning-ui.js tuning-worker.js preset-store.js public/
+          cp data/latest.json data/model.json data/backtest.json data/tuning.json.gz data/tuning-manifest.json data/weight-recommendations.json public/data/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

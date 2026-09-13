@@ -1,4 +1,4 @@
-importScripts('tuning.js');
+importScripts('tuning.js?v=presets-1');
 let data=null;
 self.onmessage=async({data:msg})=>{
 try{
@@ -13,7 +13,7 @@ try{
  }else if(msg.type==='calculate'){
   if(!data)throw Error('자료를 먼저 불러와 주세요.');
   const result=Tuning.backtest(data,msg.settings),base=Tuning.backtest(data,{...Tuning.defaults(),period:msg.settings.period,venue:msg.settings.venue});
-  self.postMessage({type:'result',id:msg.id,result,baseline:base.profit_krw});
+  self.postMessage({type:'result',id:msg.id,settings:msg.settings,result,baseline:base.profit_krw});
  }
 }catch(e){self.postMessage({type:'error',id:msg.id,message:e.message});}
 };

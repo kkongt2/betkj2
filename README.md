@@ -101,3 +101,12 @@ OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python scripts/train_profit.py
 조절 즉시 현재 후보가 바뀌며, 전체 손익·월별·지역별 표는 Web Worker에서 150ms 입력 지연 후 계산합니다. 최초 gzip 자료 다운로드 뒤에는 서버 요청 없이 기기에서 계산합니다. 설정은 localStorage에 저장하고 기본값 복원과 정산 내역 CSV를 제공합니다. 결과를 보며 조절한 기간은 더 이상 독립 검증이 아니므로 기존 모델의 고정 평가를 별도로 유지합니다.
 
 재생성: `python scripts/export_tuning.py` → `node tests/tuning.cjs`. 데이터·모델·생성 코드 해시가 다르면 게시 워크플로가 자료를 다시 만듭니다.
+
+
+## 이름별 조합 저장과 잠금
+
+현재 가중치·선택 조건·평가 범위를 이름별로 최대 30개 저장하고 불러올 수 있습니다. 저장 위치는 현재 브라우저이며 JSON 백업·가져오기를 지원합니다. 같은 이름은 자동으로 덮어쓰지 않습니다. 잠금은 가중치, EV 하한, 최대 선택 수, 평가 범위, 기본값 복원, 조합 불러오기를 차단하고 새로고침 후에도 유지합니다. 저장·백업 및 경주 조회는 가능합니다.
+
+첨부 원본 80/35/80/0/60/5/20/30/75의 2026 손익 +102,700원을 재현했습니다. `scripts/search_weights.py`는 고정 시드 20260913, EV 하한 10%, 경주당 1조합, 1,000원 베팅을 유지하며 14,340개 가중치를 사후 탐색합니다. `scripts/report_weights.cjs`는 실제 브라우저 계산기로 후보를 재검증하며 월·지역·낙폭·상위 환급 제외·10% 환급 감소 결과를 보고합니다. 결과는 `data/weight-recommendations.json`과 `data/weight-search-summary.json`에 있습니다. 재현하려면 기존 requirements 설치 후 `OPENBLAS_NUM_THREADS=2 python scripts/search_weights.py` 및 `node scripts/report_weights.cjs`를 실행합니다. 전체 탐색표는 재현 시 생성하며 git에는 요약을 보관합니다.
+
+2025/2026 결과를 모두 확인한 뒤 탐색했으므로 독립 검증이 아니며 최고 수익·합산 수익·첨부 대비 개선의 장단점을 나눠 표시합니다. 기본 모델을 교체하거나 사용자 설정을 자동 적용하지 않습니다.

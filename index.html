@@ -18,7 +18,7 @@
 <div class="tune-livebox" role="status"><span>조정 후 누적손익</span><strong id="tune-live-profit">자료 준비 중</strong><span id="tune-live-roi"></span></div>
 <div id="tune-controls" class="weight-grid"></div>
 <details class="tune-options"><summary>선택 조건·평가 범위</summary>
-<label for="tune-edge">모델 기대수익률 하한 <output id="tune-edge-value"></output></label><input id="tune-edge" type="range" min="-50" max="100" step="5">
+<label for="tune-edge">모델 기대수익률 하한 <output id="tune-edge-value"></output></label><input id="tune-edge" type="range" min="-50" max="100" step="1">
 <div class="tune-selects"><label>경주당 최대 선택<select id="tune-count"><option value="1">1조합</option><option value="2">2조합</option><option value="3">3조합</option></select></label><label>손익 평가 기간<select id="tune-period"><option value="2026">2026년 · 기존 평가 구간</option><option value="2025">2025년 · 기존 조건 선택 구간</option><option value="all">전체 · 2025.04–2026.09</option></select></label><label>손익 평가 지역<select id="tune-venue"><option value="all">전체</option><option value="seoul">서울</option><option value="busan">부산경남</option><option value="jeju">제주</option></select></label></div></details>
 <p id="tune-coverage" class="small"></p><p id="tune-status" role="status">모델을 불러온 뒤 시뮬레이션 자료를 준비합니다.</p>
 <div id="tune-results" aria-busy="true"><div id="tune-metrics" class="metrics"></div><div id="tune-chart"></div><p id="tune-dd" class="small"></p><details><summary>월별·지역별 손익</summary><div id="tune-months"></div></details></div>

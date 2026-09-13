@@ -40,11 +40,12 @@ let tuningCache=new WeakMap();
 function raceCandidates(r){
   if(!state.tuning)return QPL.predict(r,state.model);
   let cs=tuningCache.get(r);if(!cs){cs=Tuning.decorate(QPL.predict(r,state.model),r.horses);tuningCache.set(r,cs);}
+  if(state.robustEnabled){const f=Robust.foldFor(state.robustReport,r.date);return Robust.rank(Robust.decorate(cs,r.venue,f?.calibration),f?.policy);}
   return Tuning.rank(cs,state.tuning);
 }
-function chosenCandidates(cs){return state.tuning?Tuning.select(cs,state.tuning):QPL.selection(cs,state.model);}
+function chosenCandidates(cs){if(state.robustEnabled)return Robust.choose(cs,Robust.foldFor(state.robustReport,state.date)?.policy);return state.tuning?Tuning.select(cs,state.tuning):QPL.selection(cs,state.model);}
 function candidate(c,i,preferred){
-  return `<article class="candidate ${preferred?'preferred':''}"><div class="candidate-top"><div><p class="rank">${preferred?'선택 · ':''}${state.tuning?'가중치 ':''}${state.model.approved?'후보':'연구 후보'} ${i+1}</p><div class="numbers"><span class="horse-number">${c.numbers[0]}</span><span>—</span><span class="horse-number">${c.numbers[1]}</span></div><p class="names">${c.names.map(esc).join(' · ')}</p></div><div class="edge"><span>추정 기대수익률</span><strong class="${colored(c.edge)}">${c.edge>0?'+':''}${pct(c.edge)}</strong></div></div>${state.tuning?`<p class="tuning-score">사용자 점수 ${c.tuningScore.toFixed(1)} / 100 · 순위 비교용, 확률 아님</p>`:''}<div class="candidate-stats"><div><span>추정 적중확률</span><strong>${pct(c.prob)}</strong></div><div><span>예상 배당 · 모델 추정</span><strong>${c.dividend.toFixed(2)}배</strong></div><div><span>손익분기 배당 · 1/p</span><strong>${c.break_even.toFixed(2)}배</strong></div></div></article>`;
+  return `<article class="candidate ${preferred?'preferred':''}"><div class="candidate-top"><div><p class="rank">${preferred?'선택 · ':''}${state.robustEnabled?'강건 ':state.tuning?'가중치 ':''}${state.model.approved?'후보':'연구 후보'} ${i+1}</p><div class="numbers"><span class="horse-number">${c.numbers[0]}</span><span>—</span><span class="horse-number">${c.numbers[1]}</span></div><p class="names">${c.names.map(esc).join(' · ')}</p></div><div class="edge"><span>추정 기대수익률</span><strong class="${colored(c.edge)}">${c.edge>0?'+':''}${pct(c.edge)}</strong></div></div>${state.tuning?`<p class="tuning-score">${state.robustEnabled?'강건 점수':'사용자 점수'} ${c.tuningScore.toFixed(1)} / 100 · 순위 비교용, 확률 아님</p>`:''}${state.robustEnabled?`<p class="robust-edge">보수적 기대수익률 <strong>${pct(c.robustEdge)}</strong></p>`:''}<div class="candidate-stats"><div><span>추정 적중확률</span><strong>${pct(c.prob)}</strong></div><div><span>예상 배당 · 모델 추정</span><strong>${c.dividend.toFixed(2)}배</strong></div><div><span>손익분기 배당 · 1/p</span><strong>${c.break_even.toFixed(2)}배</strong></div></div></article>`;
 }
 function renderRace(r){
   const age=(Date.now()-Date.parse(state.doc.updated_at))/60000,fresh=Number.isFinite(age)&&age>=-5&&age<=30;
@@ -63,7 +64,8 @@ function renderRace(r){
     const recommend=!state.tuning&&state.model.approved&&fresh&&Number.isFinite(start);
     html+=`<div class="notice">${!fresh?'데이터가 오래되었습니다. 갱신 후 판단해 주세요. ':''}${recommend?(chosen.length?'검증 기준을 통과한 조건의 조합입니다.':'현재 연구 조건을 충족하는 조합이 없습니다.'):state.model.approved?'경주 시각·데이터 상태 확인이 필요해 추천을 보류합니다.':'장기 흑자 검증이 부족해 베팅 추천을 보류합니다. 연구 후보를 현재 설정의 점수 순으로 표시합니다.'} 예상 배당은 실제 시세와 다를 수 있습니다.</div>`;
   }
-  if(state.tuning)html+='<p class="small">사용자 가중치로 정렬한 연구 후보입니다. 추정확률·배당·손익분기배당은 원래 모델의 값이며 가중치로 재학습하지 않습니다.</p>';
+  if(state.robustEnabled){const f=Robust.foldFor(state.robustReport,r.date);const picks=chosenCandidates(raceCandidates(r));html+=`<p class="notice">${!state.robustReport?'강건 검증을 준비하고 있어 선택을 보류합니다.':!f?'이 경주일에 적용할 월별 설정이 없어 선택을 보류합니다.':!f.policy?'이 달에는 위험·손익·표본 기준을 통과한 설정이 없어 선택을 보류합니다.':picks.length?'강건 기준 선택: '+picks.map(c=>c.numbers.join(' — ')).join(', '):'보수적 기대수익률 하한을 통과한 조합이 없어 선택을 보류합니다.'}</p><p class="small">보수적 기대수익과 월별 자동 가중치로 계산합니다. 확률·배당·손익분기배당은 원래 모델 추정치입니다. 선택은 연구 기준이며 미래 흑자를 보장하지 않습니다.</p>`;}
+  else if(state.tuning)html+='<p class="small">사용자 가중치로 정렬한 연구 후보입니다. 추정확률·배당·손익분기배당은 원래 모델의 값이며 가중치로 재학습하지 않습니다.</p>';
   const cs=raceCandidates(r),keys=new Set(chosenCandidates(cs).map(key));
   if(ended)html+='<h3>예측 조합 · 과거 데이터 재계산</h3>';
   if(cs.length){

@@ -35,6 +35,7 @@ function selectors(){
   $('dates').replaceChildren(...dates.map(d=>button(dateLabel(d),d,state.date,x=>{state.date=x;state.round=null;selectors();})));
   $('rounds').replaceChildren(...races.map(r=>button(`${r.race_no}R`,r.race_no,state.round,x=>{state.round=x;selectors();})));
   renderRace(races.find(r=>r.race_no===state.round));
+  renderDaySummary(races);
 }
 let tuningCache=new WeakMap();
 function raceCandidates(r){
@@ -43,7 +44,7 @@ function raceCandidates(r){
   if(state.robustEnabled){const f=Robust.foldFor(state.robustReport,r.date);return Robust.rank(Robust.decorate(cs,r.venue,f?.calibration),f?.policy);}
   return Tuning.rank(cs,state.tuning);
 }
-function chosenCandidates(cs){if(state.robustEnabled)return Robust.choose(cs,Robust.foldFor(state.robustReport,state.date)?.policy);return state.tuning?Tuning.select(cs,state.tuning):QPL.selection(cs,state.model);}
+function chosenCandidates(cs,date=state.date){if(state.robustEnabled)return Robust.choose(cs,Robust.foldFor(state.robustReport,date)?.policy);return state.tuning?Tuning.select(cs,state.tuning):QPL.selection(cs,state.model);}
 function candidate(c,i,preferred){
   return `<article class="candidate ${preferred?'preferred':''}"><div class="candidate-top"><div><p class="rank">${preferred?'선택 · ':''}${state.robustEnabled?'강건 ':state.tuning?'가중치 ':''}${state.model.approved?'후보':'연구 후보'} ${i+1}</p><div class="numbers"><span class="horse-number">${c.numbers[0]}</span><span>—</span><span class="horse-number">${c.numbers[1]}</span></div><p class="names">${c.names.map(esc).join(' · ')}</p></div><div class="edge"><span>추정 기대수익률</span><strong class="${colored(c.edge)}">${c.edge>0?'+':''}${pct(c.edge)}</strong></div></div>${state.tuning?`<p class="tuning-score">${state.robustEnabled?'강건 점수':'사용자 점수'} ${c.tuningScore.toFixed(1)} / 100 · 순위 비교용, 확률 아님</p>`:''}${state.robustEnabled?`<p class="robust-edge">보수적 기대수익률 <strong>${pct(c.robustEdge)}</strong></p>`:''}<div class="candidate-stats"><div><span>추정 적중확률</span><strong>${pct(c.prob)}</strong></div><div><span>예상 배당 · 모델 추정</span><strong>${c.dividend.toFixed(2)}배</strong></div><div><span>손익분기 배당 · 1/p</span><strong>${c.break_even.toFixed(2)}배</strong></div></div></article>`;
 }
@@ -74,6 +75,22 @@ function renderRace(r){
   }else html+='<div class="empty">경주 이력이 부족하거나 오래되어 추정치를 표시할 수 없습니다.</div>';
   $('race-content').innerHTML=html;
 }
+function renderDaySummary(races){
+  const host=$('day-summary');if(!races.length){host.innerHTML='';return;}
+  let total=0,settled=0,pending=0,hits=0,net=0;
+  const rows=races.map(r=>{
+    const cs=raceCandidates(r),chosen=chosenCandidates(cs,r.date),result=RaceSummary.settle(chosen,r.official_result?.pair);
+    total+=result.bets;hits+=result.hits;if(result.status==='pending')pending+=result.bets;else{settled+=result.bets;net+=result.profit_krw;}
+    const start=/^\d{2}:\d{2}$/.test(r.start_time||'')?Date.parse(`${r.date.slice(0,4)}-${r.date.slice(4,6)}-${r.date.slice(6,8)}T${r.start_time}:00+09:00`):NaN;
+    const pendingLabel=r.date>today()||(r.date===today()&&Date.now()<start)?'경기 전':'결과 대기';
+    const prediction=chosen.length?result.selections.map(c=>`<span class="summary-pair"><strong>${c.numbers.join(' — ')}</strong><small>확률 ${pct(c.prob)}${c.hit===true?' · 적중':c.hit===false?' · 미적중':''}</small></span>`).join(''):`<span>선택 보류</span><small>${cs.length?'참고 1위 '+cs[0].numbers.join(' — ')+' · 베팅 제외':'예측 자료 부족'}</small>`;
+    const actual=result.status==='confirmed'?result.payouts.map(p=>`<span class="summary-pair">${p.numbers.join(' — ')} <strong>${p.odds.toFixed(1)}배</strong></span>`).join(''):result.status==='refund'?'전액 환불':pendingLabel;
+    const label=!chosen.length?'미베팅':result.status==='refund'?'환불':result.status==='pending'?pendingLabel:result.hits?'적중 '+result.hits+'/'+result.bets:'미적중';
+    return `<tr aria-current="${r.race_no===state.round}"><td><button class="round-link" type="button" data-round="${r.race_no}" aria-label="${r.race_no}경주 예측 상세 보기">${r.race_no}R</button><small>${esc(r.start_time||'')}</small></td><td data-label="예측 · 선택 조합">${prediction}</td><td data-label="실제 복연승 · 배당">${actual}</td><td class="summary-settlement"><span class="${chosen.length&&result.status==='confirmed'?(result.hits?'summary-hit':'summary-miss'):''}">${label}</span><small>${result.profit_krw===null?'미정산':money(result.profit_krw,true)}</small></td></tr>`;
+  });
+  host.innerHTML=`<div class="section-top"><h2>이 날짜 전체 라운드 비교</h2><span class="pill">${esc(venues[state.venue])}</span></div><p>${dateLabel(state.date)} · ${races.length}개 경주 · ${state.robustEnabled?'강건 전략':'현재 가중치'} 기준</p><p class="day-totals">선택 ${total}조합 · 정산 완료 ${settled}조합 · 결과 대기 ${pending}조합<br>적중 ${hits}조합 · 정산된 세전 손익 <strong class="${colored(net)}">${money(net,true)}</strong></p><p class="small">현재 설정으로 재계산한 연구 예측이며 실제 사전예측 기록이 아닙니다. 선택한 조합당 10,000원으로 정산합니다. 선택 보류의 참고 1위는 베팅·손익에서 제외합니다. 라운드를 누르면 상세 예측으로 이동합니다.</p><div class="table-scroll"><table class="day-table"><thead><tr><th scope="col">경주</th><th scope="col">예측 · 선택 조합</th><th scope="col">실제 복연승 · 배당</th><th scope="col">판정 · 손익</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+  for(const el of host.querySelectorAll?.('[data-round]')||[])el.addEventListener('click',()=>{state.round=+el.dataset.round;selectors();$('race-content').scrollIntoView({behavior:'smooth',block:'start'});});
+}
 async function json(path){const r=await fetch(`${path}?t=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw Error(`${path} 불러오기 실패`);return r.json();}
 async function load(){
   $('refresh').disabled=true;
@@ -84,4 +101,4 @@ async function load(){
   }catch(e){$('race-content').innerHTML=`<div class="empty">${esc(e.message)}<br>잠시 후 새로고침해 주세요.</div>`;$('freshness').textContent='데이터를 새로 확인하지 못했습니다.';}
   finally{$('refresh').disabled=false;}
 }
-$('refresh').addEventListener('click',load);setInterval(()=>{if(state.doc)selectors();},60000);load();
+$('refresh').addEventListener('click',load);setInterval(()=>{if(state.doc)selectors();},60000);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',load,{once:true});else load();

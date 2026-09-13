@@ -1,8 +1,9 @@
-importScripts('tuning.js?v=stake-10000-v1','robust.js?v=robust-v1');
-let data=null;
+importScripts('tuning.js?v=stake-10000-v1','robust.js?v=robust-v1','sensitivity.js?v=sweep-v1');
+let data=null,generation=0;
 self.onmessage=async({data:msg})=>{
 try{
  if(msg.type==='load'){
+  generation++;
   const [r,m]=await Promise.all([fetch('data/tuning.json.gz',{cache:'no-cache'}),fetch('data/model.json',{cache:'no-cache'})]);
   if(!r.ok||!m.ok)throw Error('시뮬레이션 자료를 불러오지 못했습니다.');
   const modelBytes=await m.arrayBuffer(),digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',modelBytes)),b=>b.toString(16).padStart(2,'0')).join('');
@@ -16,8 +17,14 @@ try{
   self.postMessage({type:'robust-result',id:msg.id,report});
  }else if(msg.type==='calculate'){
   if(!data)throw Error('자료를 먼저 불러와 주세요.');
+  const token=++generation;
   const result=Tuning.backtest(data,msg.settings),base=Tuning.backtest(data,{...Tuning.defaults(),period:msg.settings.period,venue:msg.settings.venue});
   self.postMessage({type:'result',id:msg.id,settings:msg.settings,result,baseline:base.profit_krw});
+  const context=Sensitivity.prepare(data,msg.settings);
+  for(const field of [0,1,2,3,4,5,6,7,8,'edge']){
+   await new Promise(resolve=>setTimeout(resolve,0));if(token!==generation)return;
+   self.postMessage({type:'sensitivity',id:msg.id,settings:msg.settings,curve:Sensitivity.curve(context,field)});
+  }
  }
 }catch(e){self.postMessage({type:msg.type==='robust'?'robust-error':'error',id:msg.id,message:e.message});}
 };

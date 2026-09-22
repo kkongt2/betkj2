@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T13:41:55+09:00",
+  "updated_at": "2026-09-22T13:38:16+09:00",
   "races": [
     {
       "venue": "jeju",
@@ -89991,7 +89991,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=1",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -91061,7 +91061,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=2",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -91872,7 +91872,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=3",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -92866,7 +92866,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=4",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -93953,7 +93953,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=5",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -95034,7 +95034,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=6",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -96121,7 +96121,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=7",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -97668,7 +97668,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=8",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -98754,7 +98754,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=9",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -99657,7 +99657,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=10",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     },
     {
@@ -100740,7 +100740,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=11",
-        "checked_at": "2026-09-21T13:41:55+09:00"
+        "checked_at": "2026-09-22T13:38:16+09:00"
       }
     }
   ],
@@ -100765,7 +100765,7 @@
     "history_v7": {
       "status": "ready",
       "through": "20260920",
-      "added_races": 16
+      "added_races": 0
     },
     "note": "Official race cards and settled results; no live odds collection.",
     "browse_from": "20260907"

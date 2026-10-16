@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T18:07:36+09:00",
+  "updated_at": "2026-10-16T23:03:16+09:00",
   "races": [
     {
       "venue": "busan",
@@ -106974,7 +106974,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261016&realRcNo=1",
-        "checked_at": "2026-10-16T13:19:13+09:00"
+        "checked_at": "2026-10-16T23:03:16+09:00"
       }
     },
     {
@@ -108270,7 +108270,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261016&realRcNo=2",
-        "checked_at": "2026-10-16T13:19:13+09:00"
+        "checked_at": "2026-10-16T23:03:16+09:00"
       }
     },
     {
@@ -119088,7 +119088,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261016&realRcNo=1",
-        "checked_at": "2026-10-16T13:19:13+09:00"
+        "checked_at": "2026-10-16T23:03:16+09:00"
       }
     },
     {
@@ -120307,7 +120307,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261016&realRcNo=2",
-        "checked_at": "2026-10-16T13:19:13+09:00"
+        "checked_at": "2026-10-16T23:03:16+09:00"
       }
     },
     {
@@ -121525,7 +121525,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261016&realRcNo=3",
-        "checked_at": "2026-10-16T13:19:13+09:00"
+        "checked_at": "2026-10-16T23:03:16+09:00"
       }
     },
     {

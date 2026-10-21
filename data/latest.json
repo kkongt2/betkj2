@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T13:35:41+09:00",
+  "updated_at": "2026-10-21T13:28:15+09:00",
   "races": [
     {
       "venue": "jeju",
@@ -106379,7 +106379,7 @@
     "history_v7": {
       "status": "ready",
       "through": "20261018",
-      "added_races": 17
+      "added_races": 0
     },
     "note": "Official race cards and settled results; no live odds collection.",
     "browse_from": "20261005"
